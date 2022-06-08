@@ -2,6 +2,8 @@
 
 This repo contains the tutorials for the Biomedical Data Science Workshop & Careers Panel (a satellite event of Lange's Symposium) on July 18, 2022.
 
+Registration: <https://uclahs.az1.qualtrics.com/jfe/form/SV_1G46Pt8EtpVNwPA>
+
 ## How to run tutorials?
 
 TODO:  
