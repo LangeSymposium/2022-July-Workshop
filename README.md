@@ -34,11 +34,15 @@ To try the Jupyter notebooks in cloud, click the Binder icon below:
 
 Moderator: Dr. Eric Sobel. 
 
-Panelists: 
-    - Emma Zohner, PhD - Principal Data Scientist, Engine No. 1. 
-    - Kevin Keys, PhD - Scientist II, Ambys Medicines. 
-    - Christina Ramirez, PhD - Professor, UCLA. 
-    - Roch Nianogo, PhD - Professor, UCLA. 
+Panelists:   
+
+  - Emma Zohner, PhD - Principal Data Scientist, Engine No. 1.  
+
+  - Kevin Keys, PhD - Scientist II, Ambys Medicines.   
+  
+  - Christina Ramirez, PhD - Professor, UCLA.   
+
+  - Roch Nianogo, PhD - Professor, UCLA.   
 
 ## Wifi
 
@@ -49,4 +53,4 @@ Use `Eduroam` or `UCLA_WEB`.
 
 ## Run Jupyter notebooks on your own laptop
 
-This is **not** recommended during this workshop, since your software environment (OS, Julia version, package versions, etc.) may be quite different from that assumed by the Jupyter notebooks. In case you want to run Jupyter notebooks on your own machine, simply `git clone ???` to sync the most recent course materials to your computer and install all needed software.
+This is **not** recommended during this workshop, since your software environment (OS, software versions, package versions, etc.) may be quite different from that assumed by the Jupyter notebooks. In case you want to run Jupyter notebooks on your own machine, simply `git clone ???` to sync the most recent course materials to your computer and install all needed software.
