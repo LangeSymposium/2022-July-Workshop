@@ -12,7 +12,7 @@ TODO:
 
 | Time | Topic | Presenter |  
 |:-----------|:------------|:------------|  
-| 1:00-1:15 | Introduction [html]() | Dr. Hua Zhou |  
+| 1:00-1:15 | Introduction [html](https://langesymposium.github.io/2022-July-Workshop/module1-01-intro/module1-01-intro.html) | Dr. Hua Zhou |  
 | 1:15-1:45 | R | Dr. Xiaoqian Liu |  
 | 1:45-2:15 | Python | Dr. Seyoon Ko |  
 | 2:15-2:45 | Julia | Dr. Hua Zhou |  
