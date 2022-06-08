@@ -4,9 +4,7 @@ This repo contains the tutorials for the Biomedical Data Science Workshop & Care
 
 ## How to run tutorials?
 
-To try the Jupyter notebooks in cloud, click the Binder icon below:  
-[![Binder]()
-  
+TODO:  
 
 ## Syllabus
 
@@ -14,7 +12,7 @@ To try the Jupyter notebooks in cloud, click the Binder icon below:
 
 | Time | Topic | Presenter |  
 |:-----------|:------------|:------------|  
-| 1:00-1:15 | Introduction | Dr. Hua Zhou |  
+| 1:00-1:15 | Introduction [html]() | Dr. Hua Zhou |  
 | 1:15-1:45 | R | Dr. Xiaoqian Liu |  
 | 1:45-2:15 | Python | Dr. Seyoon Ko |  
 | 2:15-2:45 | Julia | Dr. Hua Zhou |  
