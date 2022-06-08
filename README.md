@@ -53,4 +53,4 @@ Use `Eduroam` or `UCLA_WEB`.
 
 ## Run Jupyter notebooks on your own laptop
 
-This is **not** recommended during this workshop, since your software environment (OS, software versions, package versions, etc.) may be quite different from that assumed by the Jupyter notebooks. In case you want to run Jupyter notebooks on your own machine, simply `git clone [???](https://github.com/LangeSymposium/2022-July-Workshop.git)` to sync the most recent course materials to your computer and install all needed software.
+This is **not** recommended during this workshop, since your software environment (OS, software versions, package versions, etc.) may be quite different from that assumed by the Jupyter notebooks. In case you want to run Jupyter notebooks on your own machine, simply `git clone https://github.com/LangeSymposium/2022-July-Workshop.git` to sync the most recent course materials to your computer and install all needed software.
