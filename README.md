@@ -1,6 +1,6 @@
 # Biomedical Data Science Workshop & Careers Panel @ Lange Symposium
 
-This repo contains the tutorials for the Biomedical Data Science Workshop & Careers Panel (a satellite event of Lange's Symposium) on July 18, 2022.
+This repo contains the tutorials for the Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://compmed.ucla.edu/annual-lange-symposium-biomathematics)) on July 18, 2022.
 
 Registration: <https://uclahs.az1.qualtrics.com/jfe/form/SV_1G46Pt8EtpVNwPA>
 
@@ -14,8 +14,8 @@ TODO:
 
 | Time | Topic | Presenter |  
 |:-----------|:------------|:------------|  
-| 1:00-1:15 | Introduction [html](https://langesymposium.github.io/2022-July-Workshop/module1-01-intro/module1-01-intro.html) | Dr. Hua Zhou |  
-| 1:15-1:45 | R | Dr. Xiaoqian Liu |  
+| 1:00-1:15 | Introduction \[[html](https://langesymposium.github.io/2022-July-Workshop/module1-01-intro/module1-01-intro.html)\] | Dr. Hua Zhou |  
+| 1:15-1:45 | R \[[html](https://langesymposium.github.io/2022-July-Workshop/module1-02-r/module1-02-R.html)\] | Dr. Xiaoqian Liu |  
 | 1:45-2:15 | Python | Dr. Seyoon Ko |  
 | 2:15-2:45 | Julia | Dr. Hua Zhou |  
 | 2:45-3:00 | Q\&A, exercises | Participants |  
