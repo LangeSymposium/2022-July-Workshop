@@ -13112,16 +13112,19 @@ $( document ).ready(function(){
   <img src="./data-scientist-datacamp.png" width="400">
   </p><p>Source: <a href="https://www.datacamp.com/">DataCamp</a>.</p>
 </li>
-<li><p>Data is increasing in <a href="http://www.forbes.com/sites/oreillymedia/2012/01/19/volume-velocity-variety-what-you-need-to-know-about-big-data/">volume, variety, velocity, variety</a>.</p>
+<li><p>Data is increasing in <a href="http://www.forbes.com/sites/oreillymedia/2012/01/19/volume-velocity-variety-what-you-need-to-know-about-big-data/">volume, variety, velocity, variety, and value</a> (5V).</p>
 <p align="center">
     <img src="./4-Vs-of-big-data.jpg" width="500">
   </p><p>Source: <a href="https://www.ibm.com/blogs/watson-health/the-5-vs-of-big-data/">IBM</a>.</p>
 </li>
-<li><p>My favorite definition of a <em>data scientist</em>:</p>
+<li><p>My favorite definition of a <em>data scientist</em> (Josh Willis on Twitter?):</p>
 </li>
 </ul>
 <blockquote><p>A data scientist is someone who is better at statistics than any software engineer and better at software engineering than any statistician.</p>
 </blockquote>
+<ul>
+<li><a href="https://www.glassdoor.com/List/Best-Jobs-in-America-LST_KQ0,20.htm">Glassdoor</a> consistently ranks data scientists as the top 3 best jobs in America.</li>
+</ul>
 
 </div>
 </div>
@@ -13165,8 +13168,19 @@ statistician (5).</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What's-this-workshop-about?">What's this workshop about?<a class="anchor-link" href="#What's-this-workshop-about?">&#182;</a></h2><p>Hands-on experience on a typical data science workflow using Julia, Python, and R.</p>
-<p>data ingestion (from text files or databases) -&gt; data wrangling (filtering, selecting, merging, pivoting) -&gt; data visualization (static, interactive) -&gt; data analytics</p>
+<h2 id="What's-this-workshop-about?">What's this workshop about?<a class="anchor-link" href="#What's-this-workshop-about?">&#182;</a></h2><ul>
+<li>Hands-on experience on a typical data science workflow using Julia, Python, and R. </li>
+</ul>
+<blockquote><p>data ingestion (from text files or databases) -&gt; data wrangling (filtering, selecting, merging, pivoting) -&gt; data visualization (static, interactive) -&gt; data analytics</p>
+</blockquote>
+<ul>
+<li><p>Module 1 practices the workflow starting from text files or databases.</p>
+</li>
+<li><p>Module 2 practices the workflow starting from genomic data.</p>
+</li>
+<li><p>The point is not to memorize all the commands, but to have a high-level understanding of the workflow and appreciate the ease of data manipulations using these languages.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -13174,13 +13188,33 @@ statistician (5).</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-get-started">How to get started<a class="anchor-link" href="#How-to-get-started">&#182;</a></h2><p>Steps:</p>
-<ol>
+<h2 id="MIMIC-data">MIMIC data<a class="anchor-link" href="#MIMIC-data">&#182;</a></h2><p align="center">
+  <img src="./bidmc.jpeg" width="500">
+</p><p>Source: <a href="https://www.healthcareitnews.com/news/beth-israel-deaconess-creates-homegrown-telehealth-help-amazon">URL</a></p>
+<ul>
+<li><p>Tutorials in Module 1 use <a href="https://physionet.org/content/mimiciv/1.0/">MIMIC IV</a>, an intensive care electronic health record (EHR) dataset curated from over 40,000 patients in the Beth Israel Deaconess Medical Center (BIDMC) at Boston.</p>
+</li>
+<li><p>Suppose you are the chief data scientist at BIDMC and are tasked developing a predictive model to improve the <strong>30-day mortality rate</strong>, a key factor when ranking hospitals.</p>
+</li>
+<li><p>Given the basic characteristics (e.g., demographics), vital signs, and initial lab tests of a newly admitted ICU patient, can we predict the chance the patient dies within 30 days of the admission?</p>
+<p>How to create a meaningful cohort for this predictive modeling?</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-to-get-started">How to get started<a class="anchor-link" href="#How-to-get-started">&#182;</a></h2><ol>
 <li><p>Log into server: &lt;&gt;.</p>
 </li>
 <li><p>Git clone tutorials: type <code>git clone https://github.com/LangeSymposium/2022-July-Workshop.git</code> at terminal.</p>
 </li>
-<li><p>In JupyterLab, navigate to the Jupyter notebook and run code chunks.</p>
+<li><p>In JupyterLab, navigate to the Jupyter notebooks and run code chunks.</p>
+</li>
+<li><p>Orientation to the JupyterLab interface.</p>
 </li>
 </ol>
 
