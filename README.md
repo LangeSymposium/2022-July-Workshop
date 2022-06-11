@@ -26,8 +26,8 @@ TODO:
 |:-----------|:------------|:------------|  
 | 3:30-3:45 | Introduction | Dr. Hua Zhou |  
 | 3:45-4:15 | Easy manipulation of genomic data | Dr. Seyoon Ko |  
-| 4:15-4:45 | High-performance genomic data visualization using GeneticsMakie.jl  | Dr. Minsoo Kim |  
-| 4:45-5:15 | Modeling complex biological systems by BioSimulator.jl | Dr. Alfonso Landeros |  
+| 4:15-4:45 | High-performance genomic data visualization using [GeneticsMakie.jl](https://github.com/mmkim1210/GeneticsMakie.jl)  | Dr. Minsoo Kim |  
+| 4:45-5:15 | Modeling complex biological systems by [BioSimulator.jl](https://github.com/alanderos91/BioSimulator.jl) | Dr. Alfonso Landeros |  
 | 5:15-5:30 | Q\&A, exercises | Participants |
 
 ### Module 3: Career Panel with Data Scientists, 5:30pm-6:30pm
