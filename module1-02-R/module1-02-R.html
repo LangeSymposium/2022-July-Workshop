@@ -13174,12 +13174,12 @@ loaded via a namespace (and not attached):
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="tidyverse">tidyverse<a class="anchor-link" href="#tidyverse">&#182;</a></h2><ul>
-<li><a href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages for data science.</li>
+<li><a href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages for data ingestion, wrangling, and visualization.</li>
 </ul>
 <p align="center">
-<img src="./tidyverse_pkgs.jpeg" height="200">
+<img src="./tidyverse_pkgs.jpeg" width="450">
 </p><p align="center">
-<img src="./tidyverse_categories.png" height="200">
+<img src="./tidyverse_categories.png" width="450">
 </p><ul>
 <li>The lead developer Hadley Wickham won the 2019 <em>COPSS Presidents’ Award</em> (the Nobel Prize of Statistics) </li>
 </ul>
@@ -13197,7 +13197,8 @@ loaded via a namespace (and not attached):
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># load the tidyverse ecosystem</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13282,6 +13283,14 @@ loaded via a namespace (and not attached):
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We run the Bash command <code>tree -s -L 2 /Users/huazhou/Documents/Box Sync/MIMIC/mimic-iv-1.0</code> to display the MIMIC directory structure. The number in front of each data file indicates its file size (in bytes).</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
@@ -13358,7 +13367,31 @@ loaded via a namespace (and not attached):
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Most relevant to this tutorial are <code>icustays.csv.gz</code>, <code>admissions.csv.gz</code>, <code>patients.csv.gz</code>, and <code>labevents.csv.gz</code>. Let's first peek into the content of each file.</p>
+<p>Data files (<code>csv.gz</code>) are grouped under three directories; <code>core</code>, <code>hosp</code>, and <code>icu</code>.</p>
+<p>Most relevant to this tutorial are <code>icustays.csv.gz</code>, <code>admissions.csv.gz</code>, <code>patients.csv.gz</code>, and <code>chartevents.csv.gz</code>. Let's first peek into the content of each file, by calling Bash commands within R. Before that, we introduce the pipe, which is heavily used in this tutorial.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Pipe">Pipe<a class="anchor-link" href="#Pipe">&#182;</a></h3><p>Pipe linearizes nested function calls and makes complex code more readable. It enables cleaner code by.</p>
+<ol>
+<li>structuring sequences of data operations left-to-right (as opposed to from the inside and out),  </li>
+<li>avoiding nested function calls,  </li>
+<li>minimizing the need for local variables and function definitions, and   </li>
+<li>making it easy to add steps anywhere in the sequence of operations.  </li>
+</ol>
+<p>Pipe exists in many languages: Linux (<code>|</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;&gt;</code>), R (<code>%&gt;%</code> implemented in the magrittr package in tidyverse), Python (<code>|</code>), and Julia (<code>|&gt;</code>).</p>
+<p>For example, following nested code calls three R functions in sequence: (i) <code>str_c</code> function to construct proper Bash command (a string) to run, (ii) <code>system</code> function to run the Bash command, and (iii) <code>cat</code> function to properly break lines in the Bash command output.</p>
+<div class="highlight"><pre><span></span><span class="nf">cat</span><span class="p">(</span><span class="nf">system</span><span class="p">(</span><span class="nf">str_c</span><span class="p">(</span><span class="s">&quot;zcat &lt; &quot;</span><span class="p">,</span> <span class="nf">shQuote</span><span class="p">(</span><span class="nf">str_c</span><span class="p">(</span><span class="n">mimic_path</span><span class="p">,</span> <span class="s">&quot;/icu/icustays.csv.gz&quot;</span><span class="p">)),</span> <span class="s">&quot; | head&quot;</span><span class="p">),</span> <span class="n">intern</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">`\n`</span><span class="p">)</span>
+</pre></div>
+<p>Using pipe <code>%&gt;%</code>, following code achieves the same purpose</p>
+<div class="highlight"><pre><span></span><span class="nf">str_c</span><span class="p">(</span><span class="s">&quot;zcat &lt; &quot;</span><span class="p">,</span> <span class="nf">shQuote</span><span class="p">(</span><span class="nf">str_c</span><span class="p">(</span><span class="n">mimic_path</span><span class="p">,</span> <span class="s">&quot;/icu/icustays.csv.gz&quot;</span><span class="p">)),</span> <span class="s">&quot; | head&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">system</span><span class="p">(</span><span class="n">intern</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">cat</span><span class="p">(</span><span class="n">sep</span> <span class="o">=</span> <span class="s">&#39;\n&#39;</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -13616,7 +13649,6 @@ loaded via a namespace (and not attached):
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>chartevents.csv.gz</code> is a gzipped file of size 2.36GB (329,499,788 rows). Can we even read it?</p>
 <p>In this tutorial, let's just focus on the following vitals:</p>
 <ul>
 <li><p><code>220045</code> for heart rate</p>
@@ -13676,12 +13708,12 @@ loaded via a namespace (and not attached):
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Import-data-as-tibbles">Import data as tibbles<a class="anchor-link" href="#Import-data-as-tibbles">&#182;</a></h2><p>tibbles (from tidyverse) are enhanced dataframes from R.</p>
+<h2 id="Ingest-data-as-tibbles">Ingest data as tibbles<a class="anchor-link" href="#Ingest-data-as-tibbles">&#182;</a></h2><p>tibbles (from tidyverse) are enhanced dataframes from R.</p>
 <p><code>read_csv</code> function is the main engine in <code>readr</code> package for importing csv files.</p>
 <ul>
 <li><p><code>read_csv</code> handles the gz files seamlessly.</p>
 </li>
-<li><p><code>read_csv</code> parses the column data types based on the first batch of rows (<code>guess_max</code> argument, default 1000). Most times it gets it right. If not, use <code>col_types</code> argument to explicitly specify column times.</p>
+<li><p><code>read_csv</code> parses the column data types based on the first batch of rows (<code>guess_max</code> argument, default 1000). Most times it guesses the column data type right. If not, use the <code>col_types</code> argument to explicitly specify column times.</p>
 </li>
 </ul>
 
@@ -13955,7 +13987,8 @@ loaded via a namespace (and not attached):
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="chartevents_tbl">chartevents_tbl<a class="anchor-link" href="#chartevents_tbl">&#182;</a></h3><p>Reading in the <code>chartevents.csv.gz</code> turns out to be challenging. The following code reads only 4 columns</p>
+<h3 id="chartevents_tbl">chartevents_tbl<a class="anchor-link" href="#chartevents_tbl">&#182;</a></h3><p><code>chartevents.csv.gz</code> is a gzipped file of size 2.36GB (329,499,788 rows). Can we even read it?</p>
+<p>Reading in the <code>chartevents.csv.gz</code> turns out to be challenging. The following code reads only 4 columns</p>
 <div class="highlight"><pre><span></span><span class="n">chartevents_tbl</span> <span class="o">&lt;-</span> 
     <span class="nf">read_csv</span><span class="p">(</span>
         <span class="nf">str_c</span><span class="p">(</span><span class="n">mimic_path</span><span class="p">,</span> <span class="s">&quot;/icu/chartevents.csv.gz&quot;</span><span class="p">),</span>
@@ -13968,7 +14001,7 @@ loaded via a namespace (and not attached):
         <span class="p">)</span>
     <span class="p">)</span>
 </pre></div>
-<p>and took &gt;10 minutes to run on my computer (Intel i7-6920HQ CPU @ 2.90GHz, 16GB RAM). Please do <strong>not</strong> try to run it on the server. The main constraint is memory size. <code>read_csv</code> is designed to read the whole dataset into memory, and struggles if the data size is bigger than memory.</p>
+<p>and took &gt;10 minutes to run on my computer (Intel i7-6920HQ CPU @ 2.90GHz, 16GB RAM). Please do <strong>NOT</strong> try to run it on the server. The main constraint is memory size. <code>read_csv</code> is designed to read the whole dataset into memory, and struggles if the data size is bigger than memory. One solution to this data volume issue is database, which we will briefly mention later.</p>
 <p>For this tutorial, we prepared a smaller chart event data file <code>chartevents_filtered_itemid.csv.gz</code>, which only contains the chart items we are interested in:</p>
 <ul>
 <li><code>220045</code> for heart rate  </li>
@@ -13977,12 +14010,7 @@ loaded via a namespace (and not attached):
 <li><code>223761</code> for Temperature Fahrenheit  </li>
 <li><code>220210</code> for Respiratory Rate  </li>
 </ul>
-<p>On my computer, it takes around 30 seconds to read in this reduced data file. For reference, the code for generating <code>chartevents_filtered_itemid.csv.gz</code> is</p>
-<div class="highlight"><pre><span></span><span class="n">chartevents_tbl</span> <span class="o">%&gt;%</span>
-    <span class="nf">filter</span><span class="p">(</span><span class="n">itemid</span> <span class="o">%in%</span> <span class="n">chart_itemid</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">write_csv</span><span class="p">(</span><span class="s">&quot;chartevents_filtered_itemid.csv.gz&quot;</span><span class="p">)</span>
-</pre></div>
+<p>On my computer, it takes around 30 seconds to ingest this reduced data file.</p>
 
 </div>
 </div>
@@ -14050,7 +14078,7 @@ loaded via a namespace (and not attached):
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
- 36.479  15.272  19.492 </pre>
+ 36.588   6.521  13.157 </pre>
 </div>
 
 </div>
@@ -14106,7 +14134,7 @@ loaded via a namespace (and not attached):
 
 
 <div class="output_png output_subarea ">
-<img src="output_31_1.png"
+<img src="output_33_1.png"
 width=420
 height=420
 >
@@ -14121,13 +14149,13 @@ height=420
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Target-cohort">Target cohort<a class="anchor-link" href="#Target-cohort">&#182;</a></h2><p>We aim to develop a predictive model, which computes the chance of dying within 30 days of ICU stay based on baseline features</p>
+<h2 id="Target-cohort">Target cohort<a class="anchor-link" href="#Target-cohort">&#182;</a></h2><p>We aim to develop a predictive model, which computes the chance of dying within 30 days of ICU stay <code>intime</code> based on baseline features</p>
 <ul>
 <li><code>first_careunit</code>  </li>
 <li><code>age</code> at <code>intime</code>  </li>
 <li><code>gender</code>  </li>
 <li><code>ethnicity</code>  </li>
-<li>first measurement of the following vitals since <code>intime</code>  <ul>
+<li>first measurement of the following vitals since ICU stay <code>intime</code>  <ul>
 <li>220045 for heart rate  </li>
 <li>220181 for Non Invasive Blood Pressure mean  </li>
 <li>220179 for Non Invasive Blood Pressure systolic  </li>
@@ -14161,7 +14189,8 @@ height=420
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Step-1:-restrict-to-the-first-ICU-stay-of-each-patient">Step 1: restrict to the first ICU stay of each patient<a class="anchor-link" href="#Step-1:-restrict-to-the-first-ICU-stay-of-each-patient">&#182;</a></h3>
+<h3 id="Step-1:-restrict-to-the-first-ICU-stay-of-each-patient">Step 1: restrict to the first ICU stay of each patient<a class="anchor-link" href="#Step-1:-restrict-to-the-first-ICU-stay-of-each-patient">&#182;</a></h3><p><code>icustays_tbl</code> has 76,540 rows, which is reduced to 53,150 unique ICU stays.</p>
+
 </div>
 </div>
 </div>
@@ -14170,7 +14199,8 @@ height=420
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">icustays_tbl_1ststay</span> <span class="o">&lt;-</span> <span class="n">icustays_tbl</span> <span class="o">%&gt;%</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">icustays_tbl_1ststay</span> <span class="o">&lt;-</span> 
+    <span class="n">icustays_tbl</span> <span class="o">%&gt;%</span>
     <span class="c1"># first ICU stay of each unique `subject_id`</span>
     <span class="nf">group_by</span><span class="p">(</span><span class="n">subject_id</span><span class="p">)</span> <span class="o">%&gt;%</span>
 <span class="c1">#     slice_min(intime) %&gt;% # this function takes LONG</span>
@@ -14244,7 +14274,8 @@ height=420
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Step-2:-restrict-to-the-first-vital-measurements-during-the-ICU-stay">Step 2: restrict to the first vital measurements during the ICU stay<a class="anchor-link" href="#Step-2:-restrict-to-the-first-vital-measurements-during-the-ICU-stay">&#182;</a></h3>
+<h3 id="Step-2:-restrict-to-the-first-vital-measurements-during-the-ICU-stay">Step 2: restrict to the first vital measurements during the ICU stay<a class="anchor-link" href="#Step-2:-restrict-to-the-first-vital-measurements-during-the-ICU-stay">&#182;</a></h3><p>Key data wrangling concepts: select, left_join, right_join, group_by, arrange, pivot</p>
+
 </div>
 </div>
 </div>
@@ -14255,8 +14286,8 @@ height=420
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">chartevents_tbl_1ststay</span> <span class="o">&lt;-</span>
     <span class="n">chartevents_tbl</span> <span class="o">%&gt;%</span>
-    <span class="c1"># pull in the intime/outtime of that ICU stay</span>
-    <span class="nf">left_join</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">icustays_tbl_1ststay</span><span class="p">,</span> <span class="n">stay_id</span><span class="p">,</span> <span class="n">intime</span><span class="p">,</span> <span class="n">outtime</span><span class="p">),</span> <span class="n">by</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;stay_id&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="c1"># pull in the intime/outtime of each ICU stay</span>
+    <span class="nf">right_join</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">icustays_tbl_1ststay</span><span class="p">,</span> <span class="n">stay_id</span><span class="p">,</span> <span class="n">intime</span><span class="p">,</span> <span class="n">outtime</span><span class="p">),</span> <span class="n">by</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;stay_id&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
     <span class="c1"># only keep items during this ICU intime</span>
     <span class="nf">filter</span><span class="p">(</span><span class="n">charttime</span> <span class="o">&gt;=</span> <span class="n">intime</span> <span class="o">&amp;</span> <span class="n">charttime</span> <span class="o">&lt;=</span> <span class="n">outtime</span><span class="p">)</span> <span class="o">%&gt;%</span>
     <span class="c1"># group by itemid</span>
@@ -14320,7 +14351,8 @@ height=420
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Step-3:-merge-tibbles">Step 3: merge tibbles<a class="anchor-link" href="#Step-3:-merge-tibbles">&#182;</a></h3>
+<h3 id="Step-3:-merge-tibbles">Step 3: merge tibbles<a class="anchor-link" href="#Step-3:-merge-tibbles">&#182;</a></h3><p>New data wrangling concept: mutate.</p>
+
 </div>
 </div>
 </div>
@@ -14503,6 +14535,7 @@ height=420
         <span class="n">temp_f</span><span class="p">,</span> 
         <span class="n">resp_rate</span>
     <span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="c1"># convert strings to factor for more interpretable summaries</span>
     <span class="nf">mutate_if</span><span class="p">(</span><span class="n">is.character</span><span class="p">,</span> <span class="n">as.factor</span><span class="p">)</span> <span class="o">%&gt;%</span>
     <span class="nf">summary</span><span class="p">()</span>
 </pre></div>
@@ -14558,7 +14591,7 @@ height=420
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Can you spot anything unusual?</p>
+<p>Do you spot anything unusual?</p>
 
 </div>
 </div>
@@ -14605,7 +14638,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_45_0.png"
+<img src="output_47_0.png"
 width=420
 height=420
 >
@@ -14651,7 +14684,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_47_0.png"
+<img src="output_49_0.png"
 width=420
 height=420
 >
@@ -14689,7 +14722,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_48_0.png"
+<img src="output_50_0.png"
 width=420
 height=420
 >
@@ -14755,7 +14788,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_52_0.png"
+<img src="output_54_0.png"
 width=420
 height=420
 >
@@ -14794,7 +14827,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_53_0.png"
+<img src="output_55_0.png"
 width=420
 height=420
 >
@@ -14841,7 +14874,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_55_0.png"
+<img src="output_57_0.png"
 width=420
 height=420
 >
@@ -14880,7 +14913,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_56_0.png"
+<img src="output_58_0.png"
 width=420
 height=420
 >
@@ -14905,7 +14938,7 @@ height=420
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-QC-and-imputation">Data QC and imputation<a class="anchor-link" href="#Data-QC-and-imputation">&#182;</a></h2><p>Necessary steps before any analytics include</p>
+<h2 id="Data-QC-and-imputation-(self-study)">Data QC and imputation (self study)<a class="anchor-link" href="#Data-QC-and-imputation-(self-study)">&#182;</a></h2><p>Necessary steps before any analytics include</p>
 <ul>
 <li>exclude samples and variables with many missing values  </li>
 <li>fix data entry errors, e.g., <code>temp_f</code>  </li>
@@ -14915,69 +14948,10 @@ height=420
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">mimic_icu_cohort</span> <span class="o">%&gt;%</span>
-    <span class="nf">select</span><span class="p">(</span><span class="n">first_careunit</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">ethnicity</span><span class="p">,</span> <span class="n">age_intime</span><span class="p">,</span> <span class="n">heart_rate</span><span class="p">,</span> <span class="n">bp_mean</span><span class="p">,</span> <span class="n">bp_syst</span><span class="p">,</span> <span class="n">temp_f</span><span class="p">,</span> <span class="n">resp_rate</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">mutate</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="n">first_careunit</span><span class="o">:</span><span class="n">ethnicity</span><span class="p">,</span> <span class="n">as.factor</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">summary</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>                                          first_careunit  gender   
- Medical Intensive Care Unit (MICU)              :10233   F:23353  
- Cardiac Vascular Intensive Care Unit (CVICU)    : 9450   M:29797  
- Medical/Surgical Intensive Care Unit (MICU/SICU): 8833            
- Surgical Intensive Care Unit (SICU)             : 8249            
- Trauma SICU (TSICU)                             : 6965            
- Coronary Care Unit (CCU)                        : 6100            
- (Other)                                         : 3320            
-                  ethnicity       age_intime       heart_rate    
- WHITE                 :35668   Min.   : 18.00   Min.   :  0.00  
- UNKNOWN               : 5827   1st Qu.: 54.00   1st Qu.: 74.00  
- BLACK/AFRICAN AMERICAN: 4874   Median : 66.00   Median : 85.00  
- OTHER                 : 2537   Mean   : 64.47   Mean   : 87.47  
- HISPANIC/LATINO       : 1827   3rd Qu.: 78.00   3rd Qu.: 99.00  
- ASIAN                 : 1564   Max.   :102.00   Max.   :941.00  
- (Other)               :  853                    NA&#39;s   :15      
-    bp_mean             bp_syst            temp_f         resp_rate     
- Min.   :     0.00   Min.   :    0.0   Min.   :  0.00   Min.   :  0.00  
- 1st Qu.:    70.00   1st Qu.:  106.0   1st Qu.: 97.60   1st Qu.: 15.00  
- Median :    81.00   Median :  122.0   Median : 98.10   Median : 18.00  
- Mean   :    87.42   Mean   :  123.8   Mean   : 98.03   Mean   : 18.69  
- 3rd Qu.:    93.00   3rd Qu.:  139.0   3rd Qu.: 98.70   3rd Qu.: 22.00  
- Max.   :140119.00   Max.   :12262.0   Max.   :106.00   Max.   :180.00  
- NA&#39;s   :704         NA&#39;s   :683       NA&#39;s   :954      NA&#39;s   :62      </pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-analytics">Data analytics<a class="anchor-link" href="#Data-analytics">&#182;</a></h2><p>Introduce <a href="https://www.tidymodels.org/">tidymodels</a>. Typical workflow:</p>
+<h2 id="Data-analytics-(self-study)">Data analytics (self study)<a class="anchor-link" href="#Data-analytics-(self-study)">&#182;</a></h2><p><a href="https://www.tidymodels.org/">tidymodels</a> is an ecosystem for:</p>
 <ol>
 <li><p>Build and fit a model.</p>
 </li>
