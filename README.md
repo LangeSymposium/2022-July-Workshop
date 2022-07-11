@@ -1,12 +1,6 @@
 # Biomedical Data Science Workshop & Careers Panel @ Lange Symposium
 
-This repo contains the tutorials for the Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://compmed.ucla.edu/annual-lange-symposium-biomathematics)) on July 18, 2022.
-
-Registration: <https://uclahs.az1.qualtrics.com/jfe/form/SV_1G46Pt8EtpVNwPA>
-
-## How to run tutorials?
-
-TODO:  
+This repo contains the tutorials for the July 18, 2022 Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://compmed.ucla.edu/annual-lange-symposium-biomathematics)).
 
 ## Syllabus
 
@@ -27,7 +21,7 @@ TODO:
 | 3:30-3:45 | Introduction | Dr. Hua Zhou |  
 | 3:45-4:15 | Easy manipulation of genomic data | Dr. Seyoon Ko |  
 | 4:15-4:45 | High-performance genomic data visualization using [GeneticsMakie.jl](https://github.com/mmkim1210/GeneticsMakie.jl)  | Dr. Minsoo Kim |  
-| 4:45-5:15 | Modeling complex biological systems by [BioSimulator.jl](https://github.com/alanderos91/BioSimulator.jl) | Dr. Alfonso Landeros |  
+| 4:45-5:15 | Practicing Reproducible Data Science in Julia [DataDeps.jl](https://openresearchsoftware.metajnl.com/article/10.5334/jors.244/) | Dr. Alfonso Landeros |  
 | 5:15-5:30 | Q\&A, exercises | Participants |
 
 ### Module 3: Career Panel with Data Scientists, 5:30pm-6:30pm
@@ -36,22 +30,23 @@ Moderator: Dr. Eric Sobel.
 
 Panelists:   
 
-  - Emma Zohner, PhD - Principal Data Scientist, Engine No. 1.  
 
-  - Kevin Keys, PhD - Scientist II, Ambys Medicines.   
+
+  - [Kevin Keys](https://www.lathisms.org/calendar-2021s/kevin-l-keys), PhD - Scientist II, Ambys Medicines.
   
-  - Christina Ramirez, PhD - Professor, UCLA.   
+  - [Roch Nianogo](https://ph.ucla.edu/faculty/nianogo), PhD - Professor, UCLA.
 
-  - Roch Nianogo, PhD - Professor, UCLA.   
+  - [Christina Ramirez](https://ph.ucla.edu/faculty/ramirez), PhD - Professor, UCLA.
+
+  - [Emma Zohner](https://engine1.com/team/emma-zohner), PhD - Principal Data Scientist, Engine No. 1.
 
 ## Wifi
 
-Use `Eduroam` or `UCLA_WEB`. 
+At the workshop, use `Eduroam` or `UCLA_WEB`.
 
-- `UCLA_WEB` does not need password.  
-- `Eduroam` needs authentication by your institute. For example, UCLA affiliates can log in `Eduroam` by `[joebruin]@ucla.edu`  and the UCLA password. 
+- `UCLA_WEB` does not need a password.
+- `Eduroam` needs authentication by your institute. If you have not already used eduroam, visit the [eduroam](https://eduroam.org/about/connect-yourself/) site for instructions.
 
-## Run Jupyter notebooks on your own laptop
+## How to run the optional tutorials using Jupyter Notebooks
 
-This is **NOT** recommended during this workshop, since your software environment (OS, software versions, package versions, etc.) may be quite different from that assumed by the Jupyter notebooks. In case you want to run Jupyter notebooks on your own machine after the workshop, simply `git clone https://github.com/LangeSymposium/2022-July-Workshop.git` to sync the most recent course materials to your computer and install all needed software.
-
+During the workshop you may run the optional tutorials on our server. We do **not** recommend running the tutorials on your own laptop during the workshop, because your software environment (OS, software versions, package versions, etc.) may be quite different from ours. If you want to run Jupyter Notebooks on your own machine after the workshop, simply `git clone https://github.com/LangeSymposium/2022-July-Workshop.git` to sync the most recent course materials to your computer and install all needed software. At the workshop you will receive the connection details.
