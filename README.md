@@ -12,7 +12,7 @@ This repo contains the tutorials for the July 18, 2022 Biomedical Data Science W
 | 1:15-1:45 | R \[[html](https://langesymposium.github.io/2022-July-Workshop/module1-02-R/module1-02-R.html)\] | Dr. Xiaoqian Liu |  
 | 1:45-2:15 | Python | Dr. Seyoon Ko |  
 | 2:15-2:45 | Julia | Dr. Hua Zhou |  
-| 2:45-3:00 | Q\&A, exercises | Participants |  
+| 2:45-3:00 | Q&A, exercises | Participants |  
 
 ### Module 2: Computational Genomics Using Julia, 3:30pm-5:30pm
 
@@ -22,7 +22,7 @@ This repo contains the tutorials for the July 18, 2022 Biomedical Data Science W
 | 3:45-4:15 | Easy manipulation of genetic variant data | Dr. Seyoon Ko |  
 | 4:15-4:45 | High-performance genomic data visualization using [GeneticsMakie.jl](https://github.com/mmkim1210/GeneticsMakie.jl)  | Dr. Minsoo Kim |  
 | 4:45-5:15 | Practicing Reproducible Data Science in Julia [DataDeps.jl](https://openresearchsoftware.metajnl.com/article/10.5334/jors.244/) | Dr. Alfonso Landeros |  
-| 5:15-5:30 | Q\&A, exercises | Participants |
+| 5:15-5:30 | Q&A, exercises | Participants |
 
 ### Module 3: Career Panel with Data Scientists, 5:30pm-6:30pm
 
