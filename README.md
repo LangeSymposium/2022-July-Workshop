@@ -42,7 +42,7 @@ Panelists:
 
 ## Wifi
 
-At the workshop, use *eduroam* or *UCLA_WEB*.
+At the workshop, use **eduroam** or **UCLA_WEB**.
 
 - **UCLA_WEB** does not need a password.
 - **Eduroam** needs authentication by your institute. If you have not already used eduroam, visit the [eduroam](https://eduroam.org/about/connect-yourself/) site for instructions.
