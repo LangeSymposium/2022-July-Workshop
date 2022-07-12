@@ -1,4 +1,4 @@
-# Biomedical Data Science Workshop & Careers Panel @ Lange Symposium
+# Biomedical Data Science Workshop & Careers Panel
 
 This repo contains the tutorials for the July 18, 2022 Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://compmed.ucla.edu/annual-lange-symposium-biomathematics)).
 
