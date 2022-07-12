@@ -19,7 +19,7 @@ This repo contains the tutorials for the July 18, 2022 Biomedical Data Science W
 | Time | Topic | Presenter |  
 |:-----------|:------------|:------------|  
 | 3:30-3:45 | Introduction | Dr. Hua Zhou |  
-| 3:45-4:15 | Easy manipulation of genomic data | Dr. Seyoon Ko |  
+| 3:45-4:15 | Easy manipulation of genetic variant data | Dr. Seyoon Ko |  
 | 4:15-4:45 | High-performance genomic data visualization using [GeneticsMakie.jl](https://github.com/mmkim1210/GeneticsMakie.jl)  | Dr. Minsoo Kim |  
 | 4:45-5:15 | Practicing Reproducible Data Science in Julia [DataDeps.jl](https://openresearchsoftware.metajnl.com/article/10.5334/jors.244/) | Dr. Alfonso Landeros |  
 | 5:15-5:30 | Q\&A, exercises | Participants |
