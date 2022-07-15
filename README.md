@@ -42,7 +42,7 @@ Panelists:
 
 ## Wifi
 
-If you are no a UCLA affiliate, at the workshop use **eduroam** or **UCLA_WEB** as your WIFI network.
+If you are not a UCLA affiliate, at the workshop use **eduroam** or **UCLA_WEB** as your WIFI network.
 
 - **UCLA_WEB** does not need a password. (Do not confuse with UCLA_WIFI, which will require a username and password.)
 - **Eduroam** needs authentication by your institute. If you have not already used eduroam, visit the [eduroam](https://eduroam.org/about/connect-yourself/) site for instructions.
