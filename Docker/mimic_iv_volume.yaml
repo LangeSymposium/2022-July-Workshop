@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mimic-iv-pv
+spec:
+  storageClassName: "test"
+  capacity:
+    storage: 20G
+  accessModes:
+    - ReadOnlyMany
+  claimRef:
+    namespace: default
+    name: mimic-iv-pvc
+  gcePersistentDisk:
+    pdName: mimic-iv
+    fsType: ext4
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mimic-iv-pvc
+spec:
+  storageClassName: "test"
+  accessModes:
+    - ReadOnlyMany
+  resources:
+    requests:
+      storage: 20G
