@@ -32,8 +32,10 @@ gcloud container clusters create \
   --num-nodes 2 \
   --zone us-west2-a \
   --cluster-version latest \
+  --addons=GcePersistentDiskCsiDriver \
   lange-symposium-workshop
 ```
+`--addons=GcePersistentDiskCsiDriver` flag enables [Compute Engine persistent disk CSI Driver](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver) required to use persistent disks with multiple users with `ReadOnlyMany`.
 
 If you are a collaborator that did not create the cluster, run the following to access the cluster through kubernetes:
 ```
