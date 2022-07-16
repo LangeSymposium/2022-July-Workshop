@@ -35,6 +35,12 @@ gcloud container clusters create \
   lange-symposium-workshop
 ```
 
+If you are a collaborator that did not create the cluster, run the following to access the cluster through kubernetes:
+```
+gcloud container clusters get-credentials lange-symposium-workshop --zone us-west2-a --project lange-symposium-workshop-2022
+```
+`lange-symposium-workshop-2022` is the project name. 
+
 Give your account permissions to perform all administrative actions needed.
 ```
 kubectl create clusterrolebinding cluster-admin-binding \
