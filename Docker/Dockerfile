@@ -75,6 +75,7 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
       "Revise", \
       "SnpArrays", \
       "SpecialFunctions", \
+      "StableRNGs", \
       "Statistics", \
       "StatsBase", \
       "StatsModels", \
@@ -83,7 +84,6 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
       "VariantCallFormat", \
       "VCFTools" \
       ])' && \
-    julia -e 'import Pkg; Pkg.add(url = "https://github.com/alanderos91/SparseSVM.jl.git")' && \
     julia -e 'import Pkg; Pkg.precompile()' && \
     rm -rf "${HOME}/.local" && \
     fix-permissions "${JULIA_PKGDIR}"
