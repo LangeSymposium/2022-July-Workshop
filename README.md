@@ -14,7 +14,7 @@ This repo contains the tutorials for the July 18, 2022 Biomedical Data Science W
 | 2:15-2:45 | Julia | Dr. Hua Zhou |  
 | 2:45-3:00 | Q&A, exercises | Participants |  
 
-### Module 2: Computational Genomics Using Julia, 3:30pm-5:30pm
+### Module 2: Data Exploration Tools Using Julia, 3:30pm-5:30pm
 
 | Time | Topic | Presenter |  
 |:-----------|:------------|:------------|  
