@@ -32,8 +32,16 @@ gcloud container clusters create \
   --num-nodes 2 \
   --zone us-west2-a \
   --cluster-version latest \
+  --addons=GcePersistentDiskCsiDriver \
   lange-symposium-workshop
 ```
+`--addons=GcePersistentDiskCsiDriver` flag enables [Compute Engine persistent disk CSI Driver](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver) required to use persistent disks with multiple users with `ReadOnlyMany`.
+
+If you are a collaborator that did not create the cluster, run the following to access the cluster through kubernetes:
+```
+gcloud container clusters get-credentials lange-symposium-workshop --zone us-west2-a --project lange-symposium-workshop-2022
+```
+`lange-symposium-workshop-2022` is the project name. 
 
 Give your account permissions to perform all administrative actions needed.
 ```

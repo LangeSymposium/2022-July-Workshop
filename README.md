@@ -53,6 +53,6 @@ During the workshop you may run the optional tutorials on our server. We do **no
 
 We provide a server where you can run tutorials (Jupyter notebooks) during the workshop.
 
-1. Server address: <http://34.102.9.43> 
+1. Server address: <http://34.94.168.137> 
 
 2. **Username** will be same as the email address (before the @, all lower case) you used to register for the workshop. For example, if you registered for the workshop using email `Jane.Bruin@ucla.edu`, then your username on the server will be `jane.bruin`. **Password** is announced during the workshop.
