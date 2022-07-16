@@ -1,0 +1,127 @@
+# This file can update the JupyterHub Helm chart's default configuration values.
+#
+# For reference see the configuration reference and default values, but make
+# sure to refer to the Helm chart version of interest to you!
+#
+# Introduction to YAML:     https://www.youtube.com/watch?v=cdLNKUoMc6c
+# Chart config reference:   https://zero-to-jupyterhub.readthedocs.io/en/stable/resources/reference.html
+# Chart default values:     https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/HEAD/jupyterhub/values.yaml
+# Available chart versions: https://jupyterhub.github.io/helm-chart/
+#
+singleuser:
+  image:
+    # You should replace the "latest" tag with a fixed version from:
+    # https://hub.docker.com/r/jupyter/datascience-notebook/tags/
+    # Inspect the Dockerfile at:
+    # https://github.com/jupyter/docker-stacks/tree/HEAD/datascience-notebook/Dockerfile
+    name: huazhou/lange_symposium_workshop_2022
+    tag: latest
+  # storage:
+  #   extraVolumes:
+  #     - name: mimic-iv-pv
+  #       persistentVolumeClaim:
+  #         claimName: mimic-iv-pvc
+  #   extraVolumeMounts:
+  #     - name: mimic-iv-pv
+  #       mountPath: /svr/mimic-iv
+  lifecycleHooks:
+    postStart:
+      exec:
+        command:
+          [
+            "gitpuller",
+            "https://github.com/LangeSymposium/2022-July-Workshop.git",
+            "main",
+            "Lange-Symposium-Workshop",
+          ]
+hub:
+  config:
+    Authenticator:
+      admin_users:
+        - alanderos
+        - dkim116
+        - echi
+        - esobel
+        - huazhou
+        - jcpapp
+        - jinjinzhou
+        - kos
+        - mmkim1210
+        - sarahh.jii
+        - xiaoqian-liu
+        - xinkaizhou
+        - xliu62
+      allowed_users:
+        - aahna.rathod
+        - apimplaskar
+        - osagiek10
+        - alimobedi78
+        - avansomphone
+        - ashakar
+        - falakasiya1
+        - benchu99
+        - cgill22
+        - chanyueh25
+        - cindy.cheng
+        - cindy.wen
+        - manuel.coretes
+        - saige.daines
+        - dkrishnan13
+        - eajones39
+        - ejcampos
+        - emliu0811
+        - mekumagai
+        - ethan
+        - fesedebe
+        - gdufek
+        - imri_haggin
+        - haoxuanzhang
+        - hmellach
+        - jfreeland
+        - jarodle
+        - gornbein
+        - roseraosh
+        - pfannmulk
+        - yke0
+        - kaj2165
+        - kparaiso
+        - ashlopeztech
+        - mpleasure
+        - mpmargolis
+        - hanifamaswali
+        - niko.darcimaher
+        - noellew8
+        - rorduna2
+        - p.stein
+        - rmester
+        - chizara.w
+        - rwilkinson
+        - sshah15
+        - scperez
+        - sankhadas5
+        - sarthaktiwari12347
+        - seunghyuklee
+        - seunghyuklee
+        - sgucum
+        - simonlee711
+        - sskarlatou
+        - socheng
+        - twilkinson
+        - crumbie.tiffanie
+        - xiangting.li
+        - yanlongbai975
+        - yj.wang0907zoebjams
+        - user1
+        - user2
+        - user3
+        - user4
+        - user5
+        - user6
+        - user7
+        - user8
+        - user9
+        - user10
+    DummyAuthenticator:
+      password: lange
+    JupyterHub:
+      authenticator_class: dummy
