@@ -153,7 +153,7 @@ kubectl apply -f simplepod.yaml
 
 With this, mimic-iv disk is mounted at `/data/` and the empty volume is mounted at `/data2/`.  We copy the data from `/data/` to `/data2/`. 
 ```
-kubectl exec -it pod/task-pv-pod -n jhub  -- cp -r /data/ /data2
+kubectl exec -it pod/task-pv-pod -n jhub  -- cp -r /data/* /data2
 ```
 
 Then we create a `ReadOnlyMany` clone of `mimic-iv-tmp` called `mimic-iv-rom`.
