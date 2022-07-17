@@ -10,7 +10,7 @@ This repo contains the tutorials for the July 18, 2022 Biomedical Data Science W
 |:-----------|:------------|:------------|  
 | 1:00-1:15 | Introduction \[[html](https://langesymposium.github.io/2022-July-Workshop/module1-01-intro/module1-01-intro.html)\] | Dr. Hua Zhou |  
 | 1:15-1:45 | R \[[html](https://langesymposium.github.io/2022-July-Workshop/module1-02-R/module1-02-R/module1-02-R.html)\] | Dr. Xiaoqian Liu |  
-| 1:45-2:15 | Python | Dr. Seyoon Ko |  
+| 1:45-2:15 | Python \[[html](https://langesymposium.github.io/2022-July-Workshop/module1-03-Python/module1-03-Python/module1-03-Python.html)\] | Dr. Seyoon Ko |  
 | 2:15-2:45 | Julia \[[html](https://langesymposium.github.io/2022-July-Workshop/module1-04-Julia/module1-04-Julia.html)\] | Dr. Hua Zhou |  
 | 2:45-3:00 | Q&A, exercises | Participants |  
 
