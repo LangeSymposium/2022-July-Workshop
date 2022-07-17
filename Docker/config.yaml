@@ -17,7 +17,7 @@ singleuser:
     name: huazhou/lange_symposium_workshop_2022
     tag: latest
   memory:
-    limit: 3.7G
+    limit: 3.6G
     guarantee: 3G
   cpu:
     limit: 1
@@ -46,89 +46,12 @@ hub:
   config:
     Authenticator:
       admin_users:
-        - alanderos
-        - dkim116
-        - echi
-        - esobel
-        - huazhou
-        - jcpapp
-        - jinjinzhou
-        - kos
-        - mmkim1210
-        - sarahh.jii
-        - xiaoqian-liu
-        - xinkaizhou
-        - xliu62
+        - admin1
+        - admin2
       allowed_users:
-        - aahna.rathod
-        - apimplaskar
-        - osagiek10
-        - alimobedi78
-        - avansomphone
-        - ashakar
-        - falakasiya1
-        - benchu99
-        - cgill22
-        - chanyueh25
-        - cindy.cheng
-        - cindy.wen
-        - manuel.coretes
-        - saige.daines
-        - dkrishnan13
-        - eajones39
-        - ejcampos
-        - emliu0811
-        - mekumagai
-        - ethan
-        - fesedebe
-        - gdufek
-        - imri_haggin
-        - haoxuanzhang
-        - hmellach
-        - jfreeland
-        - jarodle
-        - gornbein
-        - roseraosh
-        - pfannmulk
-        - yke0
-        - kaj2165
-        - kparaiso
-        - ashlopeztech
-        - mpleasure
-        - mpmargolis
-        - hanifamaswali
-        - niko.darcimaher
-        - noellew8
-        - rorduna2
-        - p.stein
-        - rmester
-        - chizara.w
-        - rwilkinson
-        - sshah15
-        - scperez
-        - sankhadas5
-        - sarthaktiwari12347
-        - seunghyuklee
-        - seunghyuklee
-        - sgucum
-        - simonlee711
-        - sskarlatou
-        - socheng
-        - twilkinson
-        - crumbie.tiffanie
-        - xiangting.li
-        - yanlongbai975
-        - yj.wang0907zoebjams
         - user1
         - user2
         - user3
-        - user4
-        - user5
-        - user6
-        - user7
-        - user8
-        - user9
-        - user10
     DummyAuthenticator:
       password: lange
     JupyterHub:
