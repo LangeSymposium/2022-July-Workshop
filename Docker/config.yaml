@@ -16,14 +16,22 @@ singleuser:
     # https://github.com/jupyter/docker-stacks/tree/HEAD/datascience-notebook/Dockerfile
     name: huazhou/lange_symposium_workshop_2022
     tag: latest
-  # storage:
-  #   extraVolumes:
-  #     - name: mimic-iv-pv
-  #       persistentVolumeClaim:
-  #         claimName: mimic-iv-pvc
-  #   extraVolumeMounts:
-  #     - name: mimic-iv-pv
-  #       mountPath: /svr/mimic-iv
+  memory:
+    limit: 3.7G
+    guarantee: 3G
+  cpu:
+    limit: 1
+    guarantee: 0.9
+  storage:
+    extraVolumes:
+      - name: mimic-iv-pv
+        persistentVolumeClaim:
+          claimName: mimic-iv-pvc-rom
+          readOnly: true
+    extraVolumeMounts:
+      - name: mimic-iv-pv
+        mountPath: /home/shared
+        readOnly: true
   lifecycleHooks:
     postStart:
       exec:
