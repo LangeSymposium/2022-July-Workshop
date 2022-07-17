@@ -76,7 +76,4 @@ We provide a server where you can run tutorials (Jupyter notebooks) during the w
     
 2. In JupyterLab, avoid running many kernels at the same time. Promptly shut down the kernels you don't use. 
 
-3. If your kernel dies, most likely you have used more resource than allocated (1 CPU core and 3.6 GB memory). Make sure that you shut down the kernels not in use and try again. Remember that running the tutorials is optional. You can always read the static slides if the server is not responding.
-
-
-
+3. If your kernel dies, most likely you have used more resource than allocated (1 CPU core and 3.6 GB memory). Make sure that you shut down the kernels not in use and try again. Remember that running the tutorials is optional. You can always read the static slides if the server is not responding. We plan to make the workshop materials available to you after the workshop, so you can try again later.
