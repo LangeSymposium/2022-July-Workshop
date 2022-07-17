@@ -56,3 +56,27 @@ We provide a server where you can run tutorials (Jupyter notebooks) during the w
 1. Server address: <http://34.106.153.89/> 
 
 2. **Username** will be same as the email address (before the @, all lower case) you used to register for the workshop. For example, if you registered for the workshop using email `Jane.Bruin@ucla.edu`, then your username on the server will be `jane.bruin`. **Password** is announced during the workshop.
+
+### Tips
+
+1. Anytime during the workshop, feel free to ask for help. 
+
+    Course assistants: 
+    - Dr. Ben Chu  
+    - Dr. Sarah Ji  
+    - Dr. Seyoon Ko  
+    - Dr. Alfonso Landeros  
+    - Dr. Xiaoqian Liu  
+    - Do Hyun Kim   
+    - Dr. Jeanette Papp  
+    - Dr. Eric Sobel  
+    - Dr. Hua Zhou  
+    - Dr. Jin Zhou  
+    - Xinkai Zhou  
+    
+2. In JupyterLab, avoid running many kernels at the same time. Promptly shut down the kernels you don't use. 
+
+3. If your kernel dies, most likely the server does not have sufficient resource (CPU and memory) for the task at the moment. Just wait and try again later. Remember that running the tutorials is optional. You can always read the static slides if the server is not responding.
+
+
+
