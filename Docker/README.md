@@ -133,7 +133,7 @@ Create a zonal-SSD `mimic-iv` for MIMIC IV v1.0 data.
 gcloud compute disks create mimic-iv --size=10GB --type=pd-ssd --project=lange-symposium-workshop-2022 --zone=us-west2-a --source-snapshot=https://www.googleapis.com/compute/v1/projects/biostat-203b-2022winter/global/snapshots/mimic-iv
 ```
 
-We are setting up a [persistent disk with multiple users](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/readonlymany-disks). '''The data has to be written inside a Kubernetes pod in order to make a clone''' with `ReadOnlyMany` access.
+We are setting up a [persistent disk with multiple users](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/readonlymany-disks). __The data has to be written inside a Kubernetes pod__ in order to make a clone with `ReadOnlyMany` access.
 
 Create `PersistentVolume` from a persistent disk `mimic-iv` with name `mimic-iv-pvc`.
 <https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/preexisting-pd>
