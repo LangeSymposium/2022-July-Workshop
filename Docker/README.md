@@ -35,7 +35,7 @@ gcloud container clusters create \
   --addons=GcePersistentDiskCsiDriver \
   lange-symposium-workshop
 ```
-`--addons=GcePersistentDiskCsiDriver` flag enables [Compute Engine persistent disk CSI Driver](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver) required to use persistent disks with multiple users with `ReadOnlyMany`.
+`--addons=GcePersistentDiskCsiDriver` flag enables [Compute Engine persistent disk CSI Driver](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver) required to use persistent disks with multiple users (`ReadOnlyMany` access).
 
 If you are a collaborator that did not create the cluster, run the following to access the cluster through kubernetes:
 ```
@@ -104,6 +104,18 @@ List pods:
 ```
 kubectl get pod --namespace jhub
 ```
+
+Show resource usage by pod:
+
+```
+kubectl top pod --namespace=jhub
+```
+
+And show resorce usage by node:
+```
+kubectl top node --namespace=jhub
+```
+
 
 If any changes to `config.yaml`, upgrade Kubernetes cluster by
 ```
