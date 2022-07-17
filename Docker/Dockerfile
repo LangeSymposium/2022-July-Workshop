@@ -58,7 +58,6 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
       "Distributions", \
       "FileIO", \
       "GLM", \
-      "GLMakie", \
       "GeneticsMakie", \
       "Glob", \
       "GraphRecipes", \
@@ -89,6 +88,10 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     rm -rf "${HOME}/.local" && \
     fix-permissions "${JULIA_PKGDIR}"
 
+## Disable download
+RUN jupyter labextension disable @jupyterlab/docmanager-extension:download \
+    && jupyter labextension disable @jupyterlab/filebrowser-extension:download
+
 User root
 
 ## add somme Linux commands
@@ -102,3 +105,4 @@ RUN wget https://s3.amazonaws.com/plink2-assets/alpha3/plink2_linux_x86_64_20220
         && unzip plink2_linux_x86_64_20220603.zip \
         && cp plink2 /usr/local/bin \
         && chmod ugo+x /usr/local/bin/plink2
+
