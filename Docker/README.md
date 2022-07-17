@@ -69,6 +69,14 @@ Install helm:
 curl https://raw.githubusercontent.com/helm/helm/HEAD/scripts/get-helm-3 | bash
 ```
 
+
+Create namespace:
+```
+kubectl create namespace jhub
+```
+
+Then create a read-only `PersistentVolume`, as in the last section. 
+
 Install JupyterHub by helm:
 ```
 helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
@@ -118,15 +126,41 @@ gcloud container clusters resize \
     --zone us-west2-a
 ```
 
-# MIMIC-IV data
+# MIMIC-IV data (`ReadOnlyMany` access)
 
 Create a zonal-SSD `mimic-iv` for MIMIC IV v1.0 data.
 ```
 gcloud compute disks create mimic-iv --size=10GB --type=pd-ssd --project=lange-symposium-workshop-2022 --zone=us-west2-a --source-snapshot=https://www.googleapis.com/compute/v1/projects/biostat-203b-2022winter/global/snapshots/mimic-iv
 ```
 
+We are setting up a [persistent disk with multiple users](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/readonlymany-disks). '''The data has to be written inside a Kubernetes pod in order to make a clone''' with `ReadOnlyMany` access.
+
+Create `PersistentVolume` from a persistent disk `mimic-iv` with name `mimic-iv-pvc`.
 <https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/preexisting-pd>
 ```
-
+kubectl apply -f mimic_iv_volume.yaml
 ```
+
+And create a separate empty `PersistentVolume` named `mimic-iv-pvc-tmp`.
+```
+kubectl apply -f new-pvc.yaml
+```
+
+And create a pod named `task-pv-pod` to copy the data between two volumes:
+```
+kubectl apply -f simplepod.yaml
+```
+
+With this, mimic-iv disk is mounted at `/data/` and the empty volume is mounted at `/data2/`.  We copy the data from `/data/` to `/data2/`. 
+```
+kubectl exec -it pod/task-pv-pod -n jhub  -- cp -r /data/ /data2
+```
+
+Then we create a `ReadOnlyMany` clone of `mimic-iv-tmp` called `mimic-iv-rom`.
+```
+kubectl apply -f cloning-pvc.yaml
+```
+
+
+
 
