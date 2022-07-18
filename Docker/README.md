@@ -9,6 +9,8 @@ Push docker image tag to Docker Hub:
 ```
 docker push huazhou/lange_symposium_workshop_2022:latest
 ```
+Note that docker image is pulled on `helm upgrade` only if the tag is changed.
+
 
 Run a container on local machine:
 ```
