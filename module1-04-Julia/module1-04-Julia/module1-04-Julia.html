@@ -13269,7 +13269,7 @@ Environment:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="icustays_tbl">icustays_tbl<a class="anchor-link" href="#icustays_tbl">&#182;</a></h3><p>We use the <code>dataformat</code> argument to correctly parse <code>charttime</code> as <code>DateTime</code>.</p>
+<h3 id="icustays_tbl">icustays_tbl<a class="anchor-link" href="#icustays_tbl">&#182;</a></h3><p>We use the <code>dateformat</code> argument to correctly parse <code>charttime</code> as <code>DateTime</code>.</p>
 
 </div>
 </div>
@@ -13424,7 +13424,7 @@ Environment:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  1.367901 seconds (13.28 k allocations: 776.682 MiB, 0.52% compilation time)
+<pre>  1.804059 seconds (32.94 k allocations: 777.766 MiB, 2.18% gc time, 3.87% compilation time)
 </pre>
 </div>
 </div>
@@ -13656,7 +13656,7 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  9.049030 seconds (95.54 M allocations: 4.267 GiB, 8.49% gc time, 58.45% compilation time)
+<pre>  8.693733 seconds (96.13 M allocations: 4.301 GiB, 12.29% gc time, 58.83% compilation time)
 </pre>
 </div>
 </div>
@@ -13719,7 +13719,7 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  6.625155 seconds (9.67 M allocations: 1.919 GiB, 7.43% gc time, 69.27% compilation time)
+<pre>  6.223667 seconds (9.67 M allocations: 1.919 GiB, 3.31% gc time, 67.03% compilation time)
 </pre>
 </div>
 </div>
@@ -13745,7 +13745,7 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Data-visualization">Data visualization<a class="anchor-link" href="#Data-visualization">&#182;</a></h2><p>It is <strong>always</strong> a good idea to visualize data as much as possible before any statistical analysis.</p>
 <p>Remember we want to model:</p>
-<p><strong>thirty_day_mort ~ first_careunit + age_intime + gender + ethnicity + heart_rate + bp_mean + bp_syst + temp_f + resp_rate</strong></p>
+<p><strong>thirty_day_mort ~ first_careunit + age_intime + gender + ethnicity + heart_rate + temp_f</strong></p>
 <p>Let's start with a numerical summary of variables of interest.</p>
 
 </div>
@@ -13911,7 +13911,7 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Pros-and-Cons-of-Julia-for-Data-Science">Pros and Cons of Julia for Data Science<a class="anchor-link" href="#Pros-and-Cons-of-Julia-for-Data-Science">&#182;</a></h2><p><strong>Pros</strong></p>
+<h2 id="Pros-and-Cons-of-Julia">Pros and Cons of Julia<a class="anchor-link" href="#Pros-and-Cons-of-Julia">&#182;</a></h2><p><strong>Pros</strong></p>
 <ul>
 <li><p>Julia solves the notorious <em>two language problem</em> in scientific computing. Julia combines the functionality and ease of use of Python, R, Matlab, SAS and Stata with the speed of C/C++ and Java. <a href="https://www.hpcwire.com/off-the-wire/julia-joins-petaflop-club/">News: Julia Joins Petaflop Club</a>.</p>
 </li>

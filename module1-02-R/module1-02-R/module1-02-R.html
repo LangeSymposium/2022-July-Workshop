@@ -13373,15 +13373,6 @@ loaded via a namespace (and not attached):
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p align="center">
-<img src="./MIMIC.png" width="500">
-</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>Data files (<code>csv.gz</code>) are grouped under three directories; <code>core</code>, <code>hosp</code>, and <code>icu</code>.</p>
 <p>Most relevant to this tutorial are <code>icustays.csv.gz</code>, <code>admissions.csv.gz</code>, <code>patients.csv.gz</code>, and <code>chartevents.csv.gz</code>. Let's first peek into the content of each file, by calling Bash commands within R. Before that, we introduce the pipe, which is heavily used in this tutorial.</p>
 
@@ -14083,7 +14074,7 @@ loaded via a namespace (and not attached):
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
- 12.982  12.733   3.824 </pre>
+ 12.755  13.059   3.649 </pre>
 </div>
 
 </div>
@@ -14144,7 +14135,7 @@ loaded via a namespace (and not attached):
 
 
 <div class="output_png output_subarea ">
-<img src="output_34_1.png"
+<img src="output_33_1.png"
 width=420
 height=420
 >
@@ -14514,7 +14505,7 @@ height=420
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Data-visualization">Data visualization<a class="anchor-link" href="#Data-visualization">&#182;</a></h2><p>It is <strong>always</strong> a good idea to visualize data as much as possible before any statistical analysis.</p>
 <p>Remember we want to model:</p>
-<p><strong>thirty_day_mort ~ first_careunit + age_intime + gender + ethnicity + heart_rate + temp_f + resp_rate</strong></p>
+<p><strong>thirty_day_mort ~ first_careunit + age_intime + gender + ethnicity + heart_rate + temp_f</strong></p>
 <p>Let's start with a numerical summary of variables of interest.</p>
 
 </div>
@@ -14642,7 +14633,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_48_0.png"
+<img src="output_47_0.png"
 width=420
 height=420
 >
@@ -14692,7 +14683,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_50_0.png"
+<img src="output_49_0.png"
 width=420
 height=420
 >
@@ -14734,7 +14725,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_51_0.png"
+<img src="output_50_0.png"
 width=420
 height=420
 >
@@ -14805,7 +14796,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_55_0.png"
+<img src="output_54_0.png"
 width=420
 height=420
 >
@@ -14849,7 +14840,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_56_0.png"
+<img src="output_55_0.png"
 width=420
 height=420
 >
@@ -14901,7 +14892,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_58_0.png"
+<img src="output_57_0.png"
 width=420
 height=420
 >
@@ -14945,7 +14936,7 @@ height=420
 
 
 <div class="output_png output_subarea ">
-<img src="output_59_0.png"
+<img src="output_58_0.png"
 width=420
 height=420
 >
