@@ -14108,7 +14108,8 @@ Unlike R, which specializes in statistical computing/data analytics (more domain
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="c1"># we also load numpy for array computation for convenience</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">mimic_path</span> <span class="o">=</span> <span class="s2">&quot;/home/shared/1.0&quot;</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="n">mimic_path</span> <span class="o">=</span> <span class="s2">&quot;../mimic-iv-1.0&quot;</span> <span class="c1">#if platform.uname().node == &quot;RELMDOMFAC30610&quot; else &quot;/home/shared/1.0&quot;</span>
 </pre></div>
 
      </div>
@@ -14493,7 +14494,7 @@ Unlike R, which specializes in statistical computing/data analytics (more domain
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Elapsed time:  39.48315167
+<pre>Elapsed time:  10.027012456000001
 </pre>
 </div>
 </div>
@@ -14528,20 +14529,20 @@ Unlike R, which specializes in statistical computing/data analytics (more domain
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>             stay_id           charttime    itemid  valuenum
-0         30600691.0 2165-04-24 05:28:00  220179.0     152.0
-1         30600691.0 2165-04-24 05:28:00  220181.0     110.0
-2         30600691.0 2165-04-24 05:30:00  220045.0      65.0
-3         30600691.0 2165-04-24 05:30:00  220210.0      14.0
-4         30600691.0 2165-04-24 05:38:00  223761.0      97.6
-...              ...                 ...       ...       ...
-23679053  30143796.0 2161-08-30 20:00:00  223761.0      97.5
-23679054  30143796.0 2161-08-30 21:00:00  220045.0      88.0
-23679055  30143796.0 2161-08-30 21:00:00  220179.0     129.0
-23679056  30143796.0 2161-08-30 21:00:00  220181.0      95.0
-23679057  30143796.0 2161-08-30 21:00:00  220210.0      15.0
+<pre>            stay_id           charttime    itemid  valuenum
+0        30600691.0 2165-04-24 05:30:00  220045.0      65.0
+1        30600691.0 2165-04-24 05:38:00  223761.0      97.6
+2        30600691.0 2165-04-24 06:00:00  220045.0      56.0
+3        30600691.0 2165-04-24 06:09:00  220045.0      55.0
+4        30600691.0 2165-04-24 07:00:00  220045.0      57.0
+...             ...                 ...       ...       ...
+8394026  30143796.0 2161-08-30 18:00:00  220045.0      96.0
+8394027  30143796.0 2161-08-30 19:00:00  220045.0      80.0
+8394028  30143796.0 2161-08-30 20:00:00  220045.0      91.0
+8394029  30143796.0 2161-08-30 20:00:00  223761.0      97.5
+8394030  30143796.0 2161-08-30 21:00:00  220045.0      88.0
 
-[23679058 rows x 4 columns]
+[8394031 rows x 4 columns]
 </pre>
 </div>
 </div>
@@ -14609,35 +14610,35 @@ Unlike R, which specializes in statistical computing/data analytics (more domain
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
+      <th>0</th>
       <td>30600691.0</td>
       <td>2165-04-24 05:30:00</td>
       <td>220045.0</td>
       <td>65.0</td>
     </tr>
     <tr>
-      <th>5</th>
+      <th>2</th>
       <td>30600691.0</td>
       <td>2165-04-24 06:00:00</td>
       <td>220045.0</td>
       <td>56.0</td>
     </tr>
     <tr>
-      <th>9</th>
+      <th>3</th>
       <td>30600691.0</td>
       <td>2165-04-24 06:09:00</td>
       <td>220045.0</td>
       <td>55.0</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>4</th>
       <td>30600691.0</td>
       <td>2165-04-24 07:00:00</td>
       <td>220045.0</td>
       <td>57.0</td>
     </tr>
     <tr>
-      <th>16</th>
+      <th>6</th>
       <td>30600691.0</td>
       <td>2165-04-24 08:00:00</td>
       <td>220045.0</td>
@@ -14749,11 +14750,8 @@ There are packages that implement pipe by overloading other operator (e.g., the 
 <li><code>gender</code>  </li>
 <li><code>ethnicity</code>  </li>
 <li>first measurement of the following vitals since ICU stay <code>intime</code>  <ul>
-<li>220045 for heart rate  </li>
-<li>220181 for Non Invasive Blood Pressure mean  </li>
-<li>220179 for Non Invasive Blood Pressure systolic  </li>
+<li>220045 for heart rate   </li>
 <li>223761 for Temperature Fahrenheit  </li>
-<li>220210 for Respiratory Rate  </li>
 </ul>
 </li>
 </ul>
@@ -14897,10 +14895,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
     <span class="n">astype</span><span class="p">({</span><span class="s2">&quot;itemid&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">})</span><span class="o">.</span> <span class="c1"># change it to string for easier renaming</span>
     <span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;stay_id&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;itemid&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;valuenum&quot;</span><span class="p">)</span><span class="o">.</span>
     <span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;220045.0&quot;</span><span class="p">:</span> <span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;220179.0&quot;</span><span class="p">:</span> <span class="s2">&quot;bp_mean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;220181.0&quot;</span><span class="p">:</span> <span class="s2">&quot;bp_syst&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;223761.0&quot;</span><span class="p">:</span> <span class="s2">&quot;temp_f&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;220210.0&quot;</span><span class="p">:</span> <span class="s2">&quot;resp_rate&quot;</span><span class="p">})</span>
+            <span class="s2">&quot;223761.0&quot;</span><span class="p">:</span> <span class="s2">&quot;temp_f&quot;</span><span class="p">})</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -14955,16 +14950,10 @@ There are packages that implement pipe by overloading other operator (e.g., the 
     <tr style="text-align: right;">
       <th>itemid</th>
       <th>heart_rate</th>
-      <th>bp_mean</th>
-      <th>bp_syst</th>
-      <th>resp_rate</th>
       <th>temp_f</th>
     </tr>
     <tr>
       <th>stay_id</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -14973,94 +14962,61 @@ There are packages that implement pipe by overloading other operator (e.g., the 
     <tr>
       <th>30000153.0</th>
       <td>104.0</td>
-      <td>113.0</td>
-      <td>84.0</td>
-      <td>18.0</td>
       <td>99.1</td>
     </tr>
     <tr>
       <th>30000646.0</th>
       <td>100.0</td>
-      <td>107.0</td>
-      <td>75.0</td>
-      <td>28.0</td>
       <td>98.8</td>
     </tr>
     <tr>
       <th>30001148.0</th>
       <td>80.0</td>
-      <td>102.0</td>
-      <td>62.0</td>
-      <td>7.0</td>
       <td>95.6</td>
     </tr>
     <tr>
       <th>30001336.0</th>
       <td>65.0</td>
-      <td>110.0</td>
-      <td>65.0</td>
-      <td>30.0</td>
       <td>98.5</td>
     </tr>
     <tr>
       <th>30001396.0</th>
       <td>86.0</td>
-      <td>169.0</td>
-      <td>115.0</td>
-      <td>19.0</td>
       <td>98.8</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>39999286.0</th>
       <td>125.0</td>
-      <td>130.0</td>
-      <td>71.0</td>
-      <td>17.0</td>
       <td>98.9</td>
     </tr>
     <tr>
       <th>39999384.0</th>
       <td>77.0</td>
-      <td>156.0</td>
-      <td>81.0</td>
-      <td>17.0</td>
       <td>98.2</td>
     </tr>
     <tr>
       <th>39999552.0</th>
       <td>66.0</td>
-      <td>106.0</td>
-      <td>70.0</td>
-      <td>14.0</td>
       <td>98.2</td>
     </tr>
     <tr>
       <th>39999562.0</th>
       <td>93.0</td>
-      <td>101.0</td>
-      <td>87.0</td>
-      <td>15.0</td>
       <td>98.4</td>
     </tr>
     <tr>
       <th>39999810.0</th>
       <td>71.0</td>
-      <td>136.0</td>
-      <td>98.0</td>
-      <td>20.0</td>
       <td>98.1</td>
     </tr>
   </tbody>
 </table>
-<p>53136 rows × 5 columns</p>
+<p>53135 rows × 2 columns</p>
 </div>
 </div>
 
@@ -15161,12 +15117,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <th>admittime</th>
       <th>dischtime</th>
       <th>...</th>
+      <th>gender</th>
+      <th>anchor_age</th>
+      <th>anchor_year</th>
       <th>anchor_year_group</th>
       <th>dod</th>
       <th>heart_rate</th>
-      <th>bp_mean</th>
-      <th>bp_syst</th>
-      <th>resp_rate</th>
       <th>temp_f</th>
       <th>age_intime</th>
       <th>hadm_to_death</th>
@@ -15187,12 +15143,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2180-07-23 12:35:00</td>
       <td>2180-07-25 17:55:00</td>
       <td>...</td>
+      <td>F</td>
+      <td>52</td>
+      <td>2180</td>
       <td>2014 - 2016</td>
       <td>NaN</td>
       <td>91.0</td>
-      <td>84.0</td>
-      <td>56.0</td>
-      <td>24.0</td>
       <td>98.7</td>
       <td>52</td>
       <td>inf</td>
@@ -15211,12 +15167,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2189-06-27 07:38:00</td>
       <td>2189-07-03 03:00:00</td>
       <td>...</td>
+      <td>F</td>
+      <td>73</td>
+      <td>2186</td>
       <td>2008 - 2010</td>
       <td>NaN</td>
       <td>77.0</td>
-      <td>150.0</td>
-      <td>92.0</td>
-      <td>23.0</td>
       <td>98.0</td>
       <td>76</td>
       <td>inf</td>
@@ -15235,12 +15191,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2157-11-18 22:56:00</td>
       <td>2157-11-25 18:00:00</td>
       <td>...</td>
+      <td>F</td>
+      <td>55</td>
+      <td>2157</td>
       <td>2011 - 2013</td>
       <td>NaN</td>
       <td>86.0</td>
-      <td>151.0</td>
-      <td>104.0</td>
-      <td>18.0</td>
       <td>98.5</td>
       <td>55</td>
       <td>inf</td>
@@ -15259,12 +15215,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2110-04-11 15:08:00</td>
       <td>2110-04-14 15:00:00</td>
       <td>...</td>
+      <td>F</td>
+      <td>46</td>
+      <td>2110</td>
       <td>2011 - 2013</td>
       <td>NaN</td>
       <td>55.0</td>
-      <td>73.0</td>
-      <td>59.0</td>
-      <td>19.0</td>
       <td>97.7</td>
       <td>46</td>
       <td>inf</td>
@@ -15283,12 +15239,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2131-01-07 20:39:00</td>
       <td>2131-01-20 05:15:00</td>
       <td>...</td>
+      <td>F</td>
+      <td>68</td>
+      <td>2122</td>
       <td>2008 - 2010</td>
       <td>2131-01-20</td>
       <td>38.0</td>
-      <td>180.0</td>
-      <td>46.0</td>
-      <td>10.0</td>
       <td>98.1</td>
       <td>77</td>
       <td>780895.0</td>
@@ -15331,12 +15287,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2148-11-19 10:00:00</td>
       <td>2148-12-04 16:25:00</td>
       <td>...</td>
+      <td>M</td>
+      <td>41</td>
+      <td>2146</td>
       <td>2008 - 2010</td>
       <td>NaN</td>
       <td>88.0</td>
-      <td>150.0</td>
-      <td>103.0</td>
-      <td>15.0</td>
       <td>98.3</td>
       <td>43</td>
       <td>inf</td>
@@ -15355,12 +15311,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2139-10-10 18:06:00</td>
       <td>2139-10-16 03:30:00</td>
       <td>...</td>
+      <td>M</td>
+      <td>81</td>
+      <td>2138</td>
       <td>2008 - 2010</td>
       <td>NaN</td>
       <td>96.0</td>
-      <td>152.0</td>
-      <td>91.0</td>
-      <td>19.0</td>
       <td>98.9</td>
       <td>82</td>
       <td>inf</td>
@@ -15379,12 +15335,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2149-01-08 16:44:00</td>
       <td>2149-01-18 17:00:00</td>
       <td>...</td>
+      <td>F</td>
+      <td>46</td>
+      <td>2147</td>
       <td>2017 - 2019</td>
       <td>NaN</td>
       <td>104.0</td>
-      <td>113.0</td>
-      <td>96.0</td>
-      <td>16.0</td>
       <td>98.7</td>
       <td>48</td>
       <td>inf</td>
@@ -15403,12 +15359,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2164-09-10 13:47:00</td>
       <td>2164-09-17 13:42:00</td>
       <td>...</td>
+      <td>M</td>
+      <td>58</td>
+      <td>2164</td>
       <td>2008 - 2010</td>
       <td>2164-09-17</td>
       <td>100.0</td>
-      <td>114.0</td>
-      <td>76.0</td>
-      <td>16.0</td>
       <td>99.3</td>
       <td>58</td>
       <td>447332.0</td>
@@ -15427,12 +15383,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>2145-11-02 21:38:00</td>
       <td>2145-11-11 12:57:00</td>
       <td>...</td>
+      <td>F</td>
+      <td>57</td>
+      <td>2145</td>
       <td>2011 - 2013</td>
       <td>NaN</td>
       <td>94.0</td>
-      <td>115.0</td>
-      <td>81.0</td>
-      <td>21.0</td>
       <td>99.6</td>
       <td>57</td>
       <td>inf</td>
@@ -15440,7 +15396,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
     </tr>
   </tbody>
 </table>
-<p>53150 rows × 34 columns</p>
+<p>53150 rows × 31 columns</p>
 </div>
 </div>
 
@@ -15471,10 +15427,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
         <span class="s2">&quot;ethnicity&quot;</span><span class="p">,</span> 
         <span class="s2">&quot;age_intime&quot;</span><span class="p">,</span> 
         <span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;bp_mean&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;bp_syst&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;temp_f&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;resp_rate&quot;</span><span class="p">]]</span><span class="o">.</span>
+        <span class="s2">&quot;temp_f&quot;</span><span class="p">]]</span><span class="o">.</span>
     <span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
@@ -15520,10 +15473,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <th>ethnicity</th>
       <th>age_intime</th>
       <th>heart_rate</th>
-      <th>bp_mean</th>
-      <th>bp_syst</th>
       <th>temp_f</th>
-      <th>resp_rate</th>
     </tr>
   </thead>
   <tbody>
@@ -15534,19 +15484,13 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>53150</td>
       <td>53150.000000</td>
       <td>53135.000000</td>
-      <td>52467.000000</td>
-      <td>52446.000000</td>
       <td>52196.000000</td>
-      <td>53088.000000</td>
     </tr>
     <tr>
       <th>unique</th>
       <td>9</td>
       <td>2</td>
       <td>8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15559,18 +15503,12 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>freq</th>
       <td>10233</td>
       <td>29797</td>
       <td>35668</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15582,10 +15520,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>NaN</td>
       <td>64.470461</td>
       <td>87.466660</td>
-      <td>123.793718</td>
-      <td>87.420261</td>
       <td>98.034339</td>
-      <td>18.686257</td>
     </tr>
     <tr>
       <th>std</th>
@@ -15594,10 +15529,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>NaN</td>
       <td>17.315514</td>
       <td>20.170132</td>
-      <td>58.321131</td>
-      <td>806.055322</td>
       <td>3.345850</td>
-      <td>6.211814</td>
     </tr>
     <tr>
       <th>min</th>
@@ -15605,9 +15537,6 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>NaN</td>
       <td>NaN</td>
       <td>18.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
@@ -15618,10 +15547,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>NaN</td>
       <td>54.000000</td>
       <td>74.000000</td>
-      <td>106.000000</td>
-      <td>70.000000</td>
       <td>97.600000</td>
-      <td>15.000000</td>
     </tr>
     <tr>
       <th>50%</th>
@@ -15630,10 +15556,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>NaN</td>
       <td>66.000000</td>
       <td>85.000000</td>
-      <td>122.000000</td>
-      <td>81.000000</td>
       <td>98.100000</td>
-      <td>18.000000</td>
     </tr>
     <tr>
       <th>75%</th>
@@ -15642,10 +15565,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>NaN</td>
       <td>78.000000</td>
       <td>99.000000</td>
-      <td>139.000000</td>
-      <td>93.000000</td>
       <td>98.700000</td>
-      <td>22.000000</td>
     </tr>
     <tr>
       <th>max</th>
@@ -15654,10 +15574,7 @@ There are packages that implement pipe by overloading other operator (e.g., the 
       <td>NaN</td>
       <td>102.000000</td>
       <td>941.000000</td>
-      <td>12262.000000</td>
-      <td>140119.000000</td>
       <td>106.000000</td>
-      <td>180.000000</td>
     </tr>
   </tbody>
 </table>
@@ -16014,7 +15931,7 @@ Name: ethnicity, dtype: int64</pre>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h4><ol>
 <li>Summarize discrete variables: <code>gender</code>, <code>ethnicity</code>.  </li>
-<li>Summarize continuous variables: <code>heart_rate</code>, <code>bp_mean</code>, <code>bp_syst</code>, <code>temp_f</code>, <code>resp_rate</code>.</li>
+<li>Summarize continuous variables: <code>heart_rate</code>, <code>temp_f</code>.</li>
 <li>Is there anything unusual about <code>temp_f</code>?</li>
 </ol>
 
