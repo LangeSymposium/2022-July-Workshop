@@ -4,11 +4,11 @@ Options in effect:
   --out test_pgen
   --vcf test_vcf.vcf.gz
 
-Hostname: seyoonucbookpro.ad.medctr.ucla.edu
+Hostname: SeyoonucBookPro.lan
 Working directory: /Users/kose/UCLA/2022-July-Workshop/module2-01-GeneticVariantData
-Start time: Wed Jul 13 14:23:25 2022
+Start time: Sun Jul 17 16:37:54 2022
 
-Random number seed: 1657747405
+Random number seed: 1658101074
 16384 MiB RAM detected; reserving 8192 MiB for main workspace.
 Using up to 8 compute threads.
 --vcf: 1356 variants scanned.
@@ -22,4 +22,4 @@ Writing test_pgen.psam ... done.
 Writing test_pgen.pvar ... done.
 Writing test_pgen.pgen ... done.
 
-End time: Wed Jul 13 14:23:25 2022
+End time: Sun Jul 17 16:37:54 2022
