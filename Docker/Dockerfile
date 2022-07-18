@@ -46,6 +46,7 @@ RUN arch=$(uname -m) && \
 # add extra Julia packages
 RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add([ \
+      "AlgebraOfGraphics", \
       "BenchmarkTools", \
       "BGEN", \
       "CairoMakie", \
@@ -54,6 +55,7 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
       "CSV", \
       "DataFrames", \
       "DataDeps", \
+      "Dates", \
       "DelimitedFiles", \
       "Distributions", \
       "FileIO", \
@@ -66,6 +68,7 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
       "LoopVectorization", \
       "Makie", \
       "PGENFiles", \
+      "Pipe", \
       "PrettyTables", \
       "PyCall", \
       "PyPlot", \
