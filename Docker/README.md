@@ -167,7 +167,7 @@ kubectl apply -f simplepod.yaml
 
 With this, mimic-iv disk is mounted at `/data/` and the empty volume is mounted at `/data2/`.  We copy the data from `/data/` to `/data2/`. 
 ```
-kubectl exec -it pod/task-pv-pod --namespace jhub  -- cp -r /data/ /data2/
+kubectl exec -it pod/task-pv-pod --namespace jhub  -- cp -r /data/. /data2/
 ```
 
 It may be desirable to remove the pod after copying the data.
@@ -180,6 +180,13 @@ Then we create a `ReadOnlyMany` clone of `mimic-iv-tmp` called `mimic-iv-rom`.
 kubectl apply -f cloning-pvc.yaml
 ```
 
+
+Sometimes, you might have to delete and re-create some of the pods, pvs, and pvcs. If pv and pvc get stuck in `Terminating` state, do the following:
+
+```
+kubectl patch pv <pv-name> -p '{"metadata":{"finalizers":null}}' --namespace jhub
+kubectl patch pvc <pvc-name> -p '{"metadata":{"finalizers":null}}'--namespace jhub
+```
 
 
 
