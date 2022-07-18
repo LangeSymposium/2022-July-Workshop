@@ -13126,17 +13126,67 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Julia Version 1.7.1
-Commit ac5cc99908 (2021-12-22 19:35 UTC)
+<pre>Julia Version 1.7.3
+Commit 742b9abb4d (2022-05-06 12:58 UTC)
 Platform Info:
-  OS: macOS (x86_64-apple-darwin19.5.0)
-  CPU: Intel(R) Core(TM) i7-6920HQ CPU @ 2.90GHz
+  OS: macOS (x86_64-apple-darwin21.4.0)
+  CPU: Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
   LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
 Environment:
+  JULIA_NUM_THREADS = 8
   JULIA_EDITOR = code
-  JULIA_NUM_THREADS = 4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># activate environment to install packages in Project.toml</span>
+<span class="k">using</span> <span class="n">Pkg</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">pwd</span><span class="p">())</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre><span class="ansi-green-intense-fg ansi-bold">  Activating</span> project at `~/Desktop/2022-July-Workshop/module1-04-Julia`
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-green-intense-fg ansi-bold">      Status</span> `~/Desktop/2022-July-Workshop/module1-04-Julia/Project.toml`
+ <span class="ansi-black-intense-fg"> [cbdf2221] </span>AlgebraOfGraphics v0.6.9
+ <span class="ansi-black-intense-fg"> [336ed68f] </span>CSV v0.10.4
+ <span class="ansi-black-intense-fg"> [13f3f980] </span>CairoMakie v0.8.9
+ <span class="ansi-black-intense-fg"> [a93c6f00] </span>DataFrames v1.3.4
+ <span class="ansi-black-intense-fg"> [b98c9c47] </span>Pipe v1.3.0
 </pre>
 </div>
 </div>
@@ -13179,7 +13229,7 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">AlgebraOfGraphics</span><span class="p">,</span> <span class="n">CairoMakie</span><span class="p">,</span> <span class="n">CSV</span><span class="p">,</span> <span class="n">DataFrames</span><span class="p">,</span> <span class="n">Dates</span><span class="p">,</span> <span class="kt">Pipe</span>
@@ -13192,11 +13242,11 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># path to MIMIC data</span>
-<span class="n">mimic_path</span> <span class="o">=</span> <span class="n">Sys</span><span class="o">.</span><span class="n">islinux</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;/home/shared/1.0&quot;</span> <span class="o">:</span> <span class="s">&quot;/Users/huazhou/Documents/Box Sync/MIMIC/mimic-iv-1.0&quot;</span>
+<span class="n">mimic_path</span> <span class="o">=</span> <span class="n">Sys</span><span class="o">.</span><span class="n">islinux</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;/home/shared/1.0&quot;</span> <span class="o">:</span> <span class="s">&quot;/Users/huazhou/Desktop/mimic-iv-1.0&quot;</span>
 </pre></div>
 
     </div>
@@ -13209,13 +13259,13 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#34;/Users/huazhou/Documents/Box Sync/MIMIC/mimic-iv-1.0&#34;</pre>
+<pre>&#34;/Users/huazhou/Desktop/mimic-iv-1.0&#34;</pre>
 </div>
 
 </div>
@@ -13226,7 +13276,7 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># for printing all columns of DataFrame</span>
@@ -13243,7 +13293,7 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13276,7 +13326,7 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">icustays_tbl</span> <span class="o">=</span> <span class="n">CSV</span><span class="o">.</span><span class="n">File</span><span class="p">(</span>
@@ -13295,7 +13345,7 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13318,7 +13368,7 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">admissions_tbl</span> <span class="o">=</span> <span class="n">CSV</span><span class="o">.</span><span class="n">File</span><span class="p">(</span>
@@ -13337,7 +13387,7 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13360,7 +13410,7 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">patients_tbl</span> <span class="o">=</span> <span class="n">CSV</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">mimic_path</span> <span class="o">*</span> <span class="s">&quot;/core/patients.csv.gz&quot;</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="n">DataFrame</span>
@@ -13376,7 +13426,7 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13400,10 +13450,10 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">chartevents_tbl</span> <span class="o">=</span> <span class="n">CSV</span><span class="o">.</span><span class="n">File</span><span class="p">(</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span> <span class="n">chartevents_tbl</span> <span class="o">=</span> <span class="n">CSV</span><span class="o">.</span><span class="n">File</span><span class="p">(</span>
     <span class="n">mimic_path</span> <span class="o">*</span> <span class="s">&quot;/icu/chartevents_filtered_itemid.csv.gz&quot;</span><span class="p">,</span> 
     <span class="n">dateformat</span> <span class="o">=</span> <span class="s">&quot;yyyy-mm-dd HH:MM:SS&quot;</span>
     <span class="p">)</span> <span class="o">|&gt;</span> 
@@ -13420,7 +13470,18 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  4.273566 seconds (32.95 k allocations: 2.136 GiB, 2.37% gc time, 2.14% compilation time)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -13444,7 +13505,7 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">#filter(row -&gt; row.stay_id == 30600691 &amp;&amp; row.itemid == 220045, chartevents_tbl) |&gt; </span>
@@ -13464,7 +13525,7 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13480,10 +13541,11 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">chartevents_subset</span><span class="p">[</span><span class="o">!</span><span class="p">,</span> <span class="o">:</span><span class="n">charttime</span><span class="p">]</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># be patient: time-to-first-plot is long!</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">chartevents_subset</span><span class="p">[</span><span class="o">!</span><span class="p">,</span> <span class="o">:</span><span class="n">charttime</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">chartevents_subset</span><span class="p">[</span><span class="o">!</span><span class="p">,</span> <span class="o">:</span><span class="n">valuenum</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="p">(;</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">*</span>
@@ -13502,13 +13564,13 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
 
 <div class="output_png output_subarea output_execute_result">
-<img src="output_17_0.png"
+<img src="output_18_0.png"
 >
 </div>
 
@@ -13568,7 +13630,7 @@ Environment:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">icustays_tbl_1ststay</span> <span class="o">=</span> <span class="nd">@pipe</span> <span class="n">icustays_tbl</span> <span class="o">|&gt;</span>
@@ -13586,7 +13648,7 @@ Environment:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13611,10 +13673,10 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">chartevents_tbl_1ststay</span> <span class="o">=</span> <span class="nd">@pipe</span> <span class="n">chartevents_tbl</span> <span class="o">|&gt;</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span> <span class="n">chartevents_tbl_1ststay</span> <span class="o">=</span> <span class="nd">@pipe</span> <span class="n">chartevents_tbl</span> <span class="o">|&gt;</span>
     <span class="c"># pull in the intime/outtime of each ICU stay</span>
     <span class="n">rightjoin</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">select</span><span class="p">(</span><span class="n">icustays_tbl_1ststay</span><span class="p">,</span> <span class="o">:</span><span class="n">stay_id</span><span class="p">,</span> <span class="o">:</span><span class="n">intime</span><span class="p">,</span> <span class="o">:</span><span class="n">outtime</span><span class="p">),</span> <span class="n">on</span> <span class="o">=</span> <span class="o">:</span><span class="n">stay_id</span><span class="p">)</span> <span class="o">|&gt;</span> 
     <span class="c"># only keep items during this ICU intime</span>
@@ -13646,7 +13708,18 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> 17.578165 seconds (249.52 M allocations: 11.234 GiB, 17.68% gc time, 37.84% compilation time)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13670,10 +13743,10 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">mimic_icu_cohort</span> <span class="o">=</span> <span class="nd">@pipe</span> <span class="n">icustays_tbl_1ststay</span> <span class="o">|&gt;</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span> <span class="n">mimic_icu_cohort</span> <span class="o">=</span> <span class="nd">@pipe</span> <span class="n">icustays_tbl_1ststay</span> <span class="o">|&gt;</span>
     <span class="c"># merge data frames</span>
     <span class="n">leftjoin</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">admissions_tbl</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="o">:</span><span class="n">subject_id</span><span class="p">,</span> <span class="o">:</span><span class="n">hadm_id</span><span class="p">])</span> <span class="o">|&gt;</span>
     <span class="n">leftjoin</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">patients_tbl</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="o">:</span><span class="n">subject_id</span><span class="p">])</span> <span class="o">|&gt;</span>
@@ -13698,7 +13771,18 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  7.658299 seconds (9.67 M allocations: 1.951 GiB, 8.55% gc time, 73.93% compilation time)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -13725,7 +13809,7 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@pipe</span> <span class="n">mimic_icu_cohort</span> <span class="o">|&gt;</span>
@@ -13754,7 +13838,7 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13785,7 +13869,7 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@pipe</span> <span class="n">mimic_icu_cohort</span> <span class="o">|&gt;</span> 
@@ -13808,13 +13892,13 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
 
 <div class="output_png output_subarea output_execute_result">
-<img src="output_30_0.png"
+<img src="output_31_0.png"
 >
 </div>
 
@@ -13841,7 +13925,7 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@pipe</span> <span class="n">mimic_icu_cohort</span> <span class="o">|&gt;</span> 
@@ -13867,13 +13951,13 @@ Key data wrangling concepts: select, left_join, right_join, group_by, arrange, p
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
 
 <div class="output_png output_subarea output_execute_result">
-<img src="output_33_0.png"
+<img src="output_34_0.png"
 >
 </div>
 
