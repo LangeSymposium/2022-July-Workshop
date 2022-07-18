@@ -2,6 +2,13 @@
 
 This repo contains the tutorials for the July 18, 2022 Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://compmed.ucla.edu/annual-lange-symposium-biomathematics)).
 
+This event is sponsored by  
+
+- UCLA Department of Computational Medicine  
+- National Human Genome Research Institute (NHGRI)  
+- National Science Foundation  
+- American Statistical Association - Statistical Computing Section
+
 ## Syllabus
 
 ### Module 1: Data Science in Action, 1pm-3pm
@@ -68,7 +75,8 @@ We provide a server where you can run tutorials (Jupyter notebooks) during the w
     - Dr. Seyoon Ko  
     - Dr. Alfonso Landeros  
     - Dr. Xiaoqian Liu  
-    - Do Hyun Kim   
+    - Do Hyun Kim     
+    - Tomoki Okuno  
     - Dr. Jeanette Papp  
     - Dr. Eric Sobel  
     - Dr. Hua Zhou  
