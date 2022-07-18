@@ -62,6 +62,7 @@ We provide a server where you can run tutorials (Jupyter notebooks) during the w
 1. Anytime during the workshop, feel free to ask for help. 
 
     Course assistants: 
+    - Brendon Chau  
     - Dr. Ben Chu  
     - Dr. Sarah Ji  
     - Dr. Seyoon Ko  
