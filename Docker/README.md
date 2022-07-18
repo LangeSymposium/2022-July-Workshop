@@ -9,7 +9,7 @@ Push docker image tag to Docker Hub:
 ```
 docker push huazhou/lange_symposium_workshop_2022:latest
 ```
-Note that docker image is pulled on `helm upgrade` only if the tag is changed.
+Note that docker image is pulled on `helm upgrade`. Using `latest` may have some delay, so one needs to use more explicit tag or commit for the tag field of `config.yaml`.
 
 
 Run a container on local machine:
