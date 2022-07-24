@@ -47,7 +47,8 @@ Panelists:
 
 ## How to run the optional tutorials using Jupyter Notebooks
 
-During the workshop you may run the optional tutorials on our server. We do **not** recommend running the tutorials on your own laptop during the workshop, because your software environment (OS, software versions, package versions, etc.) may be quite different from ours. If you want to run Jupyter Notebooks on your own machine after the workshop, simply *git clone* [https://github.com/LangeSymposium/2022-July-Workshop.git](https://github.com/LangeSymposium/2022-July-Workshop.git) to sync the most recent course materials to your computer and install all needed software. At the workshop you will receive the connection details.
+During the workshop you may run the optional tutorials on our server. We do **not** recommend running the tutorials on your own laptop during the workshop, because your software environment (OS, software versions, package versions, etc.) may be quite different from ours. If you want to run Jupyter Notebooks on your own machine after the workshop, simply *git clone* [https://github.com/LangeSymposium/2022-July-Workshop.git](https://github.com/LangeSymposium/2022-July-Workshop.git) to sync the most recent course materials to your computer and install all needed software. At the workshop you will receive the connection details. The tutorials use the [MIMIC](https://mimic.mit.edu/) data set. If you wish to use this data for practice, or to use in your own research, you may request access by following the instructions at:
+https://mimic.mit.edu/docs/gettingstarted/
 
 ### Tips
 
