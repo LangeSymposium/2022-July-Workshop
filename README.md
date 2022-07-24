@@ -1,6 +1,6 @@
 # Biomedical Data Science Workshop & Careers Panel
 
-This repo contains the tutorials for the July 18, 2022 Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://compmed.ucla.edu/annual-lange-symposium-biomathematics)).
+This repository contains the slides, recordings, and tutorials for the July 18, 2022 Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://compmed.ucla.edu/annual-lange-symposium-biomathematics)).
 
 This event is sponsored by  
 
@@ -45,24 +45,9 @@ Panelists:
 
   - [Emma Zohner](https://engine1.com/team/emma-zohner), PhD - Principal Data Scientist, Engine No. 1.
 
-## Wifi
-
-If you are not a UCLA affiliate, use **eduroam** or **UCLA_WEB** as your WIFI network.
-
-- **UCLA_WEB** does not need a password. (Do not confuse with UCLA_WIFI, which will require a username and password.)
-- **Eduroam** needs authentication by your institute. If you have not used eduroam before, visit the [eduroam](https://eduroam.org/about/connect-yourself/) site for instructions.
-
 ## How to run the optional tutorials using Jupyter Notebooks
 
 During the workshop you may run the optional tutorials on our server. We do **not** recommend running the tutorials on your own laptop during the workshop, because your software environment (OS, software versions, package versions, etc.) may be quite different from ours. If you want to run Jupyter Notebooks on your own machine after the workshop, simply *git clone* [https://github.com/LangeSymposium/2022-July-Workshop.git](https://github.com/LangeSymposium/2022-July-Workshop.git) to sync the most recent course materials to your computer and install all needed software. At the workshop you will receive the connection details.
-
-## Workshop server
-
-We provide a server where you can run tutorials (Jupyter notebooks) during the workshop.
-
-1. Server address: <http://34.106.153.89/> 
-
-2. **Username** will be same as the email address (before the @, all lower case) you used to register for the workshop. For example, if you registered for the workshop using email `Jane.Bruin@ucla.edu`, then your username on the server will be `jane.bruin`. **Password** is announced during the workshop.
 
 ### Tips
 
