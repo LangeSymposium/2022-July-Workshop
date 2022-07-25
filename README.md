@@ -12,7 +12,7 @@ This event is sponsored by
 ## Syllabus
 
 ### Module 1: Data Science in Action, 1pm-3pm
-
+[Video Recording](https://youtu.be/gBHijDki6aQ)
 | Time | Topic | Presenter |  
 |:-----------|:------------|:------------|  
 | 1:00-1:15 | Introduction \[[html](https://langesymposium.github.io/2022-July-Workshop/module1-01-intro/module1-01-intro.html)\] | Dr. Hua Zhou |  
@@ -22,7 +22,7 @@ This event is sponsored by
 | 2:45-3:00 | Q&A, exercises | Participants |  
 
 ### Module 2: Data Exploration Tools Using Julia, 3:30pm-5:30pm
-
+[Video Recording](https://youtu.be/hdxiVKI4r60)
 | Time | Topic | Presenter |  
 |:-----------|:------------|:------------|  
 | 3:30-3:45 | Introduction | Dr. Hua Zhou |  
