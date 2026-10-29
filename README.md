@@ -1,6 +1,6 @@
 # Biomedical Data Science Workshop & Careers Panel
 
-This repository contains the slides, recordings, and tutorials for the July 18, 2022 Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://compmed.ucla.edu/annual-lange-symposium-biomathematics)).
+This repository contains the slides, recordings, and tutorials for the July 18, 2022 Biomedical Data Science Workshop & Careers Panel (a satellite event of the [Lange Symposium](https://langesymposium.github.io/Lange-Symposium/)
 
 This event is sponsored by  
 
