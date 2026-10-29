@@ -10,7 +10,7 @@ This event is sponsored by
 - American Statistical Association - Statistical Computing Section
 
 ## Syllabus
-
+*Recordings of the sessions can be viewed on the [UCLA Computational Medicine Channel](https://www.youtube.com/@computationalmedicineucla/playlists) or by clicking on the links below*
 ### Module 1: Data Science in Action, 1pm-3pm
 [Video Recording](https://youtu.be/gBHijDki6aQ)
 
@@ -39,13 +39,13 @@ Moderator: Dr. Eric Sobel.
 
 Panelists:   
 
-  - [Kevin Keys](https://www.lathisms.org/calendar-2021s/kevin-l-keys), PhD - Scientist II, Ambys Medicines.
+  - Kevin Keys, PhD - Scientist II, Ambys Medicines.
   
-  - [Roch Nianogo](https://ph.ucla.edu/faculty/nianogo), PhD - Professor, UCLA.
+  - Roch Nianogo, PhD - Professor, UCLA.
 
-  - [Christina Ramirez](https://ph.ucla.edu/faculty/ramirez), PhD - Professor, UCLA.
+  - Christina Ramirez, PhD - Professor, UCLA.
 
-  - [Emma Zohner](https://engine1.com/team/emma-zohner), PhD - Principal Data Scientist, Engine No. 1.
+  - Emma Zohner, PhD - Principal Data Scientist, Engine No. 1.
 
 ## How to run the optional tutorials using Jupyter Notebooks
 
